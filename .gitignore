@@ -1,0 +1,385 @@
+cat > .gitignore <<'EOF'
+# =============================================================================
+# Environment variables and secrets
+# =============================================================================
+
+.env
+.env.*
+!.env.example
+!**/.env.example
+
+*.secret
+*.secrets
+secrets/
+**/secrets/
+
+# Certificates and private keys
+*.key
+*.pem
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.csr
+*.crt
+
+certs/
+ssl/
+**/certs/
+**/ssl/
+
+# =============================================================================
+# Node.js / Next.js / TypeScript
+# =============================================================================
+
+node_modules/
+**/node_modules/
+
+.next/
+**/.next/
+
+out/
+**/out/
+
+dist/
+**/dist/
+
+build/
+**/build/
+
+.vercel/
+**/.vercel/
+
+.turbo/
+**/.turbo/
+
+.swc/
+**/.swc/
+
+.cache/
+**/.cache/
+
+.parcel-cache/
+**/.parcel-cache/
+
+.eslintcache
+**/.eslintcache
+
+*.tsbuildinfo
+next-env.d.ts
+
+# Test coverage
+coverage/
+**/coverage/
+
+.nyc_output/
+**/.nyc_output/
+
+# Package manager logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# npm
+.npm/
+**/.npm/
+
+# pnpm
+.pnpm-store/
+**/.pnpm-store/
+
+# Yarn Berry generated state
+.pnp
+.pnp.*
+.yarn/cache/
+.yarn/unplugged/
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# =============================================================================
+# Python / FastAPI
+# =============================================================================
+
+__pycache__/
+**/__pycache__/
+
+*.py[cod]
+*$py.class
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+**/.venv/
+**/venv/
+**/env/
+**/ENV/
+
+# Python packaging
+*.egg
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+wheels/
+
+# Testing
+.pytest_cache/
+**/.pytest_cache/
+
+.tox/
+.nox/
+
+# Coverage
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+
+# Type checking and linters
+.mypy_cache/
+**/.mypy_cache/
+
+.pyright/
+**/.pyright/
+
+.ruff_cache/
+**/.ruff_cache/
+
+.dmypy.json
+dmypy.json
+
+# Framework/runtime files
+instance/
+.webassets-cache/
+
+# Python environment/version managers
+.python-version
+
+# Jupyter
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+
+# =============================================================================
+# Databases and local persistent data
+# =============================================================================
+
+*.db
+*.db-journal
+*.sqlite
+*.sqlite3
+*.sqlite3-journal
+
+postgres-data/
+postgres_data/
+redis-data/
+redis_data/
+
+.docker-data/
+docker-data/
+volumes/
+
+# Database dumps
+*.sql
+*.dump
+*.backup
+
+# Keep intentionally committed migration SQL files
+!backend/migrations/**/*.sql
+!backend/alembic/**/*.sql
+
+# =============================================================================
+# Docker / Docker Compose
+# =============================================================================
+
+docker-compose.override.yml
+docker-compose.override.yaml
+
+*.local.yml
+*.local.yaml
+
+# Local Docker build output
+.docker/
+docker-cache/
+
+# =============================================================================
+# Nginx
+# =============================================================================
+
+nginx/logs/
+nginx/cache/
+nginx/tmp/
+nginx/certs/
+nginx/ssl/
+
+**/nginx/logs/
+**/nginx/cache/
+**/nginx/tmp/
+
+nginx/conf.d/*.local.conf
+nginx/sites-enabled/*.local.conf
+
+# =============================================================================
+# Logs and runtime files
+# =============================================================================
+
+*.log
+logs/
+**/logs/
+
+*.pid
+*.pid.lock
+*.seed
+*.sock
+
+tmp/
+temp/
+**/tmp/
+**/temp/
+
+run/
+**/run/
+
+# =============================================================================
+# IDEs and editors
+# =============================================================================
+
+# JetBrains / PyCharm / WebStorm
+.idea/
+**/.idea/
+
+*.iml
+*.ipr
+*.iws
+
+# Visual Studio Code
+.vscode/
+**/.vscode/
+
+# Visual Studio
+.vs/
+**/.vs/
+
+# Vim
+*.swp
+*.swo
+*.swn
+*~
+
+# Emacs
+\#*\#
+.#*
+
+# Local editor history
+.history/
+**/.history/
+
+# =============================================================================
+# Operating systems
+# =============================================================================
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Linux
+.directory
+.Trash-*/
+
+# WSL metadata and mounted filesystem junk
+.wslconfig.local
+Zone.Identifier
+*:Zone.Identifier
+
+# =============================================================================
+# Archives, backups and temporary copies
+# =============================================================================
+
+*.bak
+*.old
+*.orig
+*.rej
+*.tmp
+*.temp
+*.backup
+
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+*.7z
+
+# =============================================================================
+# Generated uploads and media
+# =============================================================================
+
+uploads/
+**/uploads/
+
+frontend/public/generated/
+frontend/public/uploads/
+
+# Do not globally ignore project screenshots or videos.
+# Files inside frontend/public/projects/ are intentionally versioned.
+
+# =============================================================================
+# Local reports and generated artifacts
+# =============================================================================
+
+reports/
+test-results/
+playwright-report/
+blob-report/
+
+**/test-results/
+**/playwright-report/
+
+lighthouse-report/
+*.lcov
+
+# =============================================================================
+# Deployment and cloud tooling
+# =============================================================================
+
+.terraform/
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl.local
+
+.serverless/
+.aws-sam/
+
+# Local SSH material
+.ssh/
+**/.ssh/
+
+# =============================================================================
+# Project-specific local files
+# =============================================================================
+
+frontend/.env.local
+backend/.env.local
+
+frontend/public/resume/*.draft.pdf
+docs/private/
+docs/drafts/
+
+SITE_SPEC.local.md
+DESIGN_SPEC.local.md
+CONTENT.local.md
+EOF
