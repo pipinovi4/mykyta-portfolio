@@ -168,8 +168,8 @@ jobs:
             "${DEPLOY_USER}@${DEPLOY_HOST}" \
             "set -eu
              cd /opt/apps/mykyta-portfolio
-             sudo env IMAGE_TAG=${IMAGE_TAG} docker compose -f docker-compose.yml pull frontend
-             sudo env IMAGE_TAG=${IMAGE_TAG} docker compose -f docker-compose.yml up -d --no-deps frontend
-             sudo docker compose -f docker-compose.yml ps
+             env IMAGE_TAG=${IMAGE_TAG} docker compose -f docker-compose.yml pull frontend
+             env IMAGE_TAG=${IMAGE_TAG} docker compose -f docker-compose.yml up -d --no-deps frontend
+             docker compose -f docker-compose.yml ps
              curl --fail --silent --show-error --retry 10 --retry-delay 3 http://127.0.0.1:8080/health
-             sudo docker image prune -f"
+             docker image prune -f"
