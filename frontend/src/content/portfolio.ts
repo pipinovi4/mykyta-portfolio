@@ -71,6 +71,7 @@ export const projects: readonly Project[] = [
     summary:
       "An educational machine-learning engine with manual forward and backward propagation, CPU computations, modular architecture, and automated tests.",
     stack: ["C++17", "Eigen", "CPU computation", "Automated tests"],
+    scope: ["Engine architecture", "Forward pass", "Backpropagation", "Automated tests"],
     gallery: placeholderGallery("BackpropLab", 3),
     ...sharedProjectMedia,
   },
@@ -82,6 +83,7 @@ export const projects: readonly Project[] = [
     summary:
       "Cloudflare IP synchronization, UFW rules, Nginx configuration, validation, rollback, and health checks for protected origin infrastructure.",
     stack: ["Bash", "Linux", "UFW", "Nginx", "Cloudflare"],
+    scope: ["IP synchronization", "Firewall rules", "Validation", "Rollback"],
     gallery: placeholderGallery("Cloudflare Edge Guard", 2),
     ...sharedProjectMedia,
   },

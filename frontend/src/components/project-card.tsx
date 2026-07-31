@@ -42,7 +42,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           />
 
           {project.scope ? (
-            <div className="system-panel" aria-label="FinControl engineering scope">
+            <div className="system-panel" aria-label={`${project.title} engineering scope`}>
               <div className="system-panel__header">
                 <span className="mono-label">Engineering scope</span>
                 <span className="system-panel__signal" aria-hidden="true">•••</span>
