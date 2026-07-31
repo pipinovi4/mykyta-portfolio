@@ -1,3 +1,9 @@
+export type ProjectImage = {
+  src: string;
+  alt: string;
+  caption: string;
+};
+
 export type Project = {
   title: string;
   kind: string;
@@ -8,6 +14,7 @@ export type Project = {
   scope?: readonly string[];
   imageSrc: string;
   videoId: string;
+  gallery: readonly ProjectImage[];
 };
 
 export type Capability = {
@@ -29,6 +36,13 @@ export const profile = {
   website: "https://mykytabozhenko.site",
 } as const;
 
+const placeholderGallery = (projectTitle: string, count: number): readonly ProjectImage[] =>
+  Array.from({ length: count }, (_, index) => ({
+    src: "/media/project-visual.jpg",
+    alt: `Temporary project visual for ${projectTitle}, frame ${index + 1}`,
+    caption: `Temporary visual ${String(index + 1).padStart(2, "0")} — replace with a real ${projectTitle} screenshot.`,
+  }));
+
 const sharedProjectMedia = {
   imageSrc: "/media/project-visual.jpg",
   videoId: "xz7RqTj7MbM",
@@ -44,6 +58,7 @@ export const projects: readonly Project[] = [
     stack: ["FastAPI", "PostgreSQL", "SQLAlchemy 2.0", "Alembic", "Pydantic v2", "Next.js", "Docker"],
     scope: ["Backend architecture", "REST API", "Data model", "Deployment"],
     featured: true,
+    gallery: placeholderGallery("FinControl", 4),
     ...sharedProjectMedia,
   },
   {
@@ -53,6 +68,7 @@ export const projects: readonly Project[] = [
     summary:
       "An educational machine-learning engine with manual forward and backward propagation, CPU computations, modular architecture, and automated tests.",
     stack: ["C++17", "Eigen", "CPU computation", "Automated tests"],
+    gallery: placeholderGallery("BackpropLab", 3),
     ...sharedProjectMedia,
   },
   {
@@ -62,6 +78,7 @@ export const projects: readonly Project[] = [
     summary:
       "Cloudflare IP synchronization, UFW rules, Nginx configuration, validation, rollback, and health checks for protected origin infrastructure.",
     stack: ["Bash", "Linux", "UFW", "Nginx", "Cloudflare"],
+    gallery: placeholderGallery("Cloudflare Edge Guard", 2),
     ...sharedProjectMedia,
   },
 ];

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CursorGlow } from "@/components/cursor-glow";
 import { ProjectCard } from "@/components/project-card";
 import { capabilities, infrastructureProjects, profile, projects } from "@/content/portfolio";
 
@@ -12,6 +13,7 @@ const navigation = [
 export default function Home() {
   return (
     <>
+      <CursorGlow />
       <a className="skip-link" href="#main-content">Skip to content</a>
 
       <header className="site-header">

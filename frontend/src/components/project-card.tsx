@@ -1,4 +1,5 @@
 import type { Project } from "@/content/portfolio";
+import { ProjectGallery } from "@/components/project-gallery";
 import { ProjectMedia } from "@/components/project-media";
 
 type ProjectCardProps = {
@@ -60,6 +61,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ) : null}
         </div>
       </div>
+
+      <ProjectGallery images={project.gallery} projectTitle={project.title} />
 
       <footer className="project-card__footer">
         <span className="project-card__stack-label">Technology</span>
