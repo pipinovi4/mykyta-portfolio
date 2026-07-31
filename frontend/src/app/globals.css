@@ -1220,3 +1220,75 @@ a:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 5px; 
   .next-project__item--next { align-items: flex-start; text-align: left; }
   .next-project__back { grid-column: auto; grid-row: auto; justify-self: start; margin-top: 0; }
 }
+
+
+/* Symmetric engineering profile composition */
+@media (min-width: 1000px) {
+  .about-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: center;
+    gap: clamp(2.5rem, 4vw, 4.5rem);
+  }
+
+  .about-grid > div:first-child,
+  .about-copy {
+    display: flex;
+    min-height: clamp(24rem, 32vw, 28rem);
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .about-grid > div:first-child {
+    align-items: flex-start;
+  }
+
+  .about-grid h2 {
+    max-width: 9ch;
+    font-size: clamp(2.8rem, 4vw, 4.5rem);
+    line-height: .96;
+  }
+
+  .portrait-frame {
+    width: min(100%, 21rem);
+    justify-self: center;
+  }
+
+  .portrait-frame__image {
+    aspect-ratio: 3 / 4;
+    max-height: 28rem;
+  }
+
+  .about-copy {
+    padding-top: 0;
+  }
+}
+
+.about-overview-video .project-media {
+  margin-inline: auto;
+}
+
+@media (max-width: 999px) {
+  .about-grid {
+    grid-template-columns: minmax(0, .8fr) minmax(260px, .55fr);
+    align-items: start;
+  }
+
+  .about-grid > div:first-child,
+  .about-copy {
+    min-height: 0;
+  }
+
+  .about-copy {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 700px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-copy {
+    grid-column: auto;
+  }
+}
