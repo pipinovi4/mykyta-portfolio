@@ -1,4 +1,5 @@
 import type { Project } from "@/content/portfolio";
+import { ProjectMedia } from "@/components/project-media";
 
 type ProjectCardProps = {
   project: Project;
@@ -10,47 +11,62 @@ export function ProjectCard({ project }: ProjectCardProps) {
       className={project.featured ? "project-card project-card--featured" : "project-card"}
       aria-labelledby={`project-${project.index}`}
     >
-      <div className="project-card__topline">
-        <span className="mono-label">Project / {project.index}</span>
+      <header className="project-card__header">
+        <div className="project-card__identity">
+          <span className="project-card__number" aria-hidden="true">{project.index}</span>
+          <div>
+            <span className="project-card__label">Selected project</span>
+            <p className="project-card__kind">{project.kind}</p>
+          </div>
+        </div>
         <span className="project-card__status">
           <span aria-hidden="true" className="status-dot" />
           Case study in progress
         </span>
-      </div>
+      </header>
 
-      <div className={project.featured ? "project-card__featured-grid" : undefined}>
+      <div className={project.featured ? "project-card__featured-grid" : "project-card__body"}>
         <div className="project-card__content">
-          <p className="project-card__kind">{project.kind}</p>
           <h3 id={`project-${project.index}`}>{project.title}</h3>
           <p className="project-card__summary">{project.summary}</p>
-          <ul className="tag-list" aria-label={`${project.title} technology stack`}>
-            {project.stack.map((technology) => (
-              <li key={technology}>{technology}</li>
-            ))}
-          </ul>
         </div>
 
-        {project.scope ? (
-          <div className="system-panel" aria-label="FinControl engineering scope">
-            <div className="system-panel__header">
-              <span className="mono-label">System scope</span>
-              <span className="system-panel__signal" aria-hidden="true">•••</span>
+        <div className="project-card__visual-column">
+          <ProjectMedia
+            imageSrc={project.imageSrc}
+            projectTitle={project.title}
+            videoId={project.videoId}
+          />
+
+          {project.scope ? (
+            <div className="system-panel" aria-label="FinControl engineering scope">
+              <div className="system-panel__header">
+                <span className="mono-label">Engineering scope</span>
+                <span className="system-panel__signal" aria-hidden="true">•••</span>
+              </div>
+              <div className="system-flow">
+                {project.scope.map((item, index) => (
+                  <div className="system-node" key={item}>
+                    <span className="system-node__index">0{index + 1}</span>
+                    <span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="system-panel__footer">
+                <span>Application → data → operations</span>
+                <span className="accent-text">Production</span>
+              </div>
             </div>
-            <div className="system-flow">
-              {project.scope.map((item, index) => (
-                <div className="system-node" key={item}>
-                  <span className="system-node__index">0{index + 1}</span>
-                  <span>{item}</span>
-                </div>
-              ))}
-            </div>
-            <div className="system-panel__footer">
-              <span>Application → data → operations</span>
-              <span className="accent-text">Production</span>
-            </div>
-          </div>
-        ) : null}
+          ) : null}
+        </div>
       </div>
+
+      <footer className="project-card__footer">
+        <span className="project-card__stack-label">Technology</span>
+        <ul className="tag-list" aria-label={`${project.title} technology stack`}>
+          {project.stack.map((technology) => <li key={technology}>{technology}</li>)}
+        </ul>
+      </footer>
     </article>
   );
 }

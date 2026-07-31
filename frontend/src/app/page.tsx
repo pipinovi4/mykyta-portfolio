@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { ProjectCard } from "@/components/project-card";
 import { capabilities, infrastructureProjects, profile, projects } from "@/content/portfolio";
 
@@ -86,6 +87,21 @@ export default function Home() {
               <p className="eyebrow">Engineering profile</p>
               <h2 id="about-heading">Backend depth.<br />End-to-end context.</h2>
             </div>
+            <figure className="portrait-frame">
+              <div className="portrait-frame__image">
+                <Image
+                  alt="Portrait of Mykyta Bozhenko"
+                  fill
+                  priority={false}
+                  sizes="(max-width: 900px) 100vw, 28vw"
+                  src="/media/mykyta-portrait.jpg"
+                />
+              </div>
+              <figcaption>
+                <span>Mykyta Bozhenko</span>
+                <span>Backend / Software Engineer</span>
+              </figcaption>
+            </figure>
             <div className="about-copy">
               <p className="about-lead">I focus on production-ready backend systems, REST APIs, internal platforms, AI integrations, and deployment infrastructure.</p>
               <p>My work spans application architecture, data modeling, business logic, service integration, containerized deployment, and Linux-based operations. I also work across frontend and systems tooling when a project requires an end-to-end engineering approach.</p>

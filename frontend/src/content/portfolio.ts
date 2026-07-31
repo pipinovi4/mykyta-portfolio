@@ -6,6 +6,8 @@ export type Project = {
   index: string;
   featured?: boolean;
   scope?: readonly string[];
+  imageSrc: string;
+  videoId: string;
 };
 
 export type Capability = {
@@ -27,6 +29,11 @@ export const profile = {
   website: "https://mykytabozhenko.site",
 } as const;
 
+const sharedProjectMedia = {
+  imageSrc: "/media/project-visual.jpg",
+  videoId: "xz7RqTj7MbM",
+} as const;
+
 export const projects: readonly Project[] = [
   {
     index: "01",
@@ -37,6 +44,7 @@ export const projects: readonly Project[] = [
     stack: ["FastAPI", "PostgreSQL", "SQLAlchemy 2.0", "Alembic", "Pydantic v2", "Next.js", "Docker"],
     scope: ["Backend architecture", "REST API", "Data model", "Deployment"],
     featured: true,
+    ...sharedProjectMedia,
   },
   {
     index: "02",
@@ -45,6 +53,7 @@ export const projects: readonly Project[] = [
     summary:
       "An educational machine-learning engine with manual forward and backward propagation, CPU computations, modular architecture, and automated tests.",
     stack: ["C++17", "Eigen", "CPU computation", "Automated tests"],
+    ...sharedProjectMedia,
   },
   {
     index: "03",
@@ -53,6 +62,7 @@ export const projects: readonly Project[] = [
     summary:
       "Cloudflare IP synchronization, UFW rules, Nginx configuration, validation, rollback, and health checks for protected origin infrastructure.",
     stack: ["Bash", "Linux", "UFW", "Nginx", "Cloudflare"],
+    ...sharedProjectMedia,
   },
 ];
 
