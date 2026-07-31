@@ -31,7 +31,7 @@ ENV NODE_ENV=production
 COPY --from=dependencies /app/node_modules ./node_modules
 COPY . .
 
-RUN npm run build
+RUN mkdir -p public && npm run build
 
 FROM node:${NODE_VERSION}-slim AS runner
 
