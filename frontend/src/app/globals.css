@@ -771,3 +771,100 @@ a:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 5px; 
 @media (prefers-reduced-motion: reduce) {
   .cursor-glow { display: none; }
 }
+
+
+/* Compact project presentation layout */
+.project-card__featured-grid,
+.project-card__body {
+  grid-template-columns: minmax(0, 1fr) minmax(340px, .82fr);
+  gap: clamp(2rem, 5vw, 5rem);
+  align-items: stretch;
+}
+
+.project-card__content {
+  min-width: 0;
+}
+
+.project-card__content > .project-gallery {
+  margin-top: clamp(2rem, 4vw, 3.25rem);
+  padding: 0;
+}
+
+.project-card__content .project-gallery__heading {
+  padding-block: .85rem;
+}
+
+.project-card__content .project-gallery__grid {
+  height: clamp(9rem, 14vw, 12rem);
+}
+
+.project-card__content .project-gallery__item,
+.project-card__content .project-gallery__grid--3 .project-gallery__item:not(:first-child),
+.project-card__content .project-gallery__grid--4 .project-gallery__item {
+  min-height: 0;
+}
+
+.project-card__content .project-gallery__grid--4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+}
+
+.project-card__visual-column {
+  height: 100%;
+}
+
+.project-card__visual-column .project-media {
+  flex: 1 1 auto;
+  min-height: 14rem;
+}
+
+.project-card__visual-column .system-panel {
+  flex: 0 0 auto;
+}
+
+.project-card__visual-column .system-flow {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: .4rem;
+  padding: .65rem;
+}
+
+.project-card__visual-column .system-node {
+  min-height: 3.8rem;
+  padding: .55rem;
+  font-size: .62rem;
+}
+
+.project-card__visual-column .system-panel__header,
+.project-card__visual-column .system-panel__footer {
+  padding: .65rem .8rem;
+}
+
+@media (max-width: 900px) {
+  .project-card__featured-grid,
+  .project-card__body {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card__content .project-gallery__grid {
+    height: clamp(12rem, 38vw, 18rem);
+  }
+
+  .project-card__visual-column .project-media {
+    flex: none;
+    min-height: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .project-card__content .project-gallery__grid {
+    height: 14rem;
+  }
+
+  .project-card__content .project-gallery__heading .mono-label {
+    display: none;
+  }
+
+  .project-card__visual-column .system-flow {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

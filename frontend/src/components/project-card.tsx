@@ -30,6 +30,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="project-card__content">
           <h3 id={`project-${project.index}`}>{project.title}</h3>
           <p className="project-card__summary">{project.summary}</p>
+          <ProjectGallery images={project.gallery} projectTitle={project.title} />
         </div>
 
         <div className="project-card__visual-column">
@@ -61,8 +62,6 @@ export function ProjectCard({ project }: ProjectCardProps) {
           ) : null}
         </div>
       </div>
-
-      <ProjectGallery images={project.gallery} projectTitle={project.title} />
 
       <footer className="project-card__footer">
         <span className="project-card__stack-label">Technology</span>
