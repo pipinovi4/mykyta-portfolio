@@ -279,7 +279,7 @@ a:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 5px; 
 .project-card__content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
 }
 
 .project-card h3,
@@ -564,13 +564,13 @@ a:focus-visible { outline: 2px solid var(--accent-strong); outline-offset: 5px; 
   top: 0;
   left: 0;
   z-index: 4;
-  width: min(46rem, 70vw);
+  width: 5rem;
   aspect-ratio: 1;
   border-radius: 999px;
-  background: radial-gradient(circle, rgb(124 156 255 / .105) 0%, rgb(124 156 255 / .04) 34%, transparent 70%);
+  background: radial-gradient(circle, rgb(124 156 255 / .07) 0%, rgb(124 156 255 / .025) 38%, transparent 74%);
   opacity: 0;
   pointer-events: none;
-  filter: blur(16px);
+  filter: blur(8px);
   will-change: transform;
   transition: opacity 300ms ease;
 }
