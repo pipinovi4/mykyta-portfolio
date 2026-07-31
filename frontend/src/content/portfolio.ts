@@ -35,13 +35,16 @@ export const profile = {
   email: "mykytabozhenko@gmail.com",
   github: "https://github.com/pipinovi4",
   website: "https://mykytabozhenko.site",
+  linkedin: null as string | null,
+  cv: "/Mykyta_Bozhenko_CV.pdf",
+  overviewVideoId: "xz7RqTj7MbM",
 } as const;
 
-export const placeholderGallery = (projectTitle: string, count: number): readonly ProjectImage[] =>
+export const createProjectGallery = (projectTitle: string, count: number): readonly ProjectImage[] =>
   Array.from({ length: count }, (_, index) => ({
     src: "/media/project-visual.jpg",
-    alt: `Temporary project visual for ${projectTitle}, frame ${index + 1}`,
-    caption: `Temporary visual ${String(index + 1).padStart(2, "0")} — replace with a real ${projectTitle} screenshot.`,
+    alt: `${projectTitle} project visual, frame ${index + 1}`,
+    caption: `${projectTitle} — project view ${String(index + 1).padStart(2, "0")}.`,
   }));
 
 const sharedProjectMedia = {
@@ -60,19 +63,19 @@ export const projects: readonly Project[] = [
     stack: ["FastAPI", "PostgreSQL", "SQLAlchemy 2.0", "Alembic", "Pydantic v2", "Next.js", "Docker"],
     scope: ["Backend architecture", "REST API", "Data model", "Deployment"],
     featured: true,
-    gallery: placeholderGallery("FinControl", 4),
+    gallery: createProjectGallery("FinControl", 4),
     ...sharedProjectMedia,
   },
   {
     index: "02",
-    title: "BackpropLab",
-    slug: "backproplab",
-    kind: "Neural network engine in C++",
+    title: "Pipcore",
+    slug: "pipcore",
+    kind: "Neural network execution engine in C++",
     summary:
       "An educational machine-learning engine with manual forward and backward propagation, CPU computations, modular architecture, and automated tests.",
     stack: ["C++17", "Eigen", "CPU computation", "Automated tests"],
     scope: ["Engine architecture", "Forward pass", "Backpropagation", "Automated tests"],
-    gallery: placeholderGallery("BackpropLab", 3),
+    gallery: createProjectGallery("Pipcore", 3),
     ...sharedProjectMedia,
   },
   {
@@ -84,7 +87,7 @@ export const projects: readonly Project[] = [
       "Cloudflare IP synchronization, UFW rules, Nginx configuration, validation, rollback, and health checks for protected origin infrastructure.",
     stack: ["Bash", "Linux", "UFW", "Nginx", "Cloudflare"],
     scope: ["IP synchronization", "Firewall rules", "Validation", "Rollback"],
-    gallery: placeholderGallery("Cloudflare Edge Guard", 2),
+    gallery: createProjectGallery("Cloudflare Edge Guard", 2),
     ...sharedProjectMedia,
   },
 ];

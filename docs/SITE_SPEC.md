@@ -39,9 +39,9 @@ Engineering credibility takes priority over generic freelance marketing.
 ## 6. Routes
 
 - `/` — homepage
-- `/projects/fincontrol` — FinControl case study
-- `/projects/backproplab` — BackpropLab case study
-- `/projects/cloudflare-edge-guard` — Cloudflare Edge Guard case study
+- `/work/fincontrol` — FinControl case study
+- `/work/pipcore` — Pipcore case study
+- `/work/cloudflare-edge-guard` — Cloudflare Edge Guard case study
 
 Experience, Education, and Engineering Notes routes are deferred.
 
@@ -61,7 +61,7 @@ Expose role, positioning statement, primary stack, and actions immediately. Prim
 
 ### Selected Work
 
-FinControl, BackpropLab, and Cloudflare Edge Guard are primary projects with dedicated routes. Ubuntu VPS Bootstrap is a smaller supporting project. Cards show type, summary, and stack without logo walls.
+FinControl, Pipcore, and Cloudflare Edge Guard are primary projects with dedicated routes. Ubuntu VPS Bootstrap is a smaller supporting project. Cards show type, summary, and stack without logo walls.
 
 ### Engineering Profile / About
 

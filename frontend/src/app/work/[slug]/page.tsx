@@ -22,6 +22,12 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
     title: study.title,
     description: study.summary,
     alternates: { canonical: `/work/${study.slug}` },
+    openGraph: {
+      type: "article",
+      url: `/work/${study.slug}`,
+      title: `${study.title} — Engineering case study`,
+      description: study.summary,
+    },
   };
 }
 
@@ -31,6 +37,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
   if (!study) notFound();
 
   const currentIndex = caseStudies.findIndex((item) => item.slug === study.slug);
+  const previousStudy = caseStudies[(currentIndex - 1 + caseStudies.length) % caseStudies.length];
   const nextStudy = caseStudies[(currentIndex + 1) % caseStudies.length];
 
   return (
@@ -106,24 +113,35 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
 
         <section className="case-section case-section--surface">
           <div className="site-shell">
-            <div className="case-section__heading"><div><p className="eyebrow">06 / Walkthrough</p><h2>Project gallery</h2></div><p>Temporary visuals preserve the final gallery behavior until real project screenshots are available.</p></div>
-            <ProjectGallery images={study.gallery} projectTitle={study.title} />
+            <div className="case-section__heading"><div><p className="eyebrow">06 / Metrics</p><h2>Technical facts</h2></div><p>Concrete, verifiable facts drawn from the project scope and implementation.</p></div>
+            <dl className="metrics-grid">{study.metrics.map((metric) => <div key={metric.label}><dt>{metric.value}</dt><dd>{metric.label}</dd></div>)}</dl>
           </div>
         </section>
 
         <section className="case-section">
+          <div className="site-shell">
+            <div className="case-section__heading"><div><p className="eyebrow">07 / Walkthrough</p><h2>Project gallery</h2></div><p>Open any frame to inspect the project presentation in the full-screen viewer.</p></div>
+            <ProjectGallery images={study.gallery} projectTitle={study.title} />
+          </div>
+        </section>
+
+        <section className="case-section case-section--surface">
           <div className="site-shell case-two-column">
-            <div><p className="eyebrow">07 / Challenges</p><h2>Challenges and solutions</h2></div>
+            <div><p className="eyebrow">08 / Challenges</p><h2>Challenges and solutions</h2></div>
             <div className="challenge-list">{study.challenges.map(({ challenge, solution }, index) => <article key={challenge}><span className="mono-label">0{index + 1}</span><div><h3>{challenge}</h3><p>→ {solution}</p></div></article>)}</div>
           </div>
         </section>
 
         <section className="case-result">
-          <div className="site-shell case-result__grid"><div><p className="eyebrow">08 / Result</p><h2>Result</h2></div><div><p>{study.result}</p><ul className="tag-list">{study.stack.map((item) => <li key={item}>{item}</li>)}</ul></div></div>
+          <div className="site-shell case-result__grid"><div><p className="eyebrow">09 / Result</p><h2>Result</h2></div><div><p>{study.result}</p><ul className="tag-list">{study.stack.map((item) => <li key={item}>{item}</li>)}</ul></div></div>
         </section>
 
         <nav className="next-project" aria-label="Project navigation">
-          <div className="site-shell next-project__inner"><div><span className="mono-label">Next project</span><Link href={`/work/${nextStudy.slug}`}>{nextStudy.title} <span aria-hidden="true">→</span></Link></div><Link href="/#work">Back to selected work</Link></div>
+          <div className="site-shell next-project__inner">
+            <div className="next-project__item next-project__item--previous"><span className="mono-label">Previous project</span><Link href={`/work/${previousStudy.slug}`}><span aria-hidden="true">←</span> {previousStudy.title}</Link></div>
+            <Link className="next-project__back" href="/#work">Back to selected work</Link>
+            <div className="next-project__item next-project__item--next"><span className="mono-label">Next project</span><Link href={`/work/${nextStudy.slug}`}>{nextStudy.title} <span aria-hidden="true">→</span></Link></div>
+          </div>
         </nav>
       </main>
     </>

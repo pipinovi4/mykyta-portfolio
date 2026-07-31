@@ -1,4 +1,4 @@
-import { placeholderGallery, projects, type ProjectImage } from "@/content/portfolio";
+import { createProjectGallery, projects, type ProjectImage } from "@/content/portfolio";
 
 export type CaseStudy = {
   slug: string;
@@ -14,6 +14,7 @@ export type CaseStudy = {
   architecture: readonly string[];
   decisions: readonly { title: string; description: string }[];
   capabilities: readonly { title: string; description: string }[];
+  metrics: readonly { value: string; label: string }[];
   challenges: readonly { challenge: string; solution: string }[];
   result: string;
   stack: readonly string[];
@@ -59,6 +60,12 @@ export const caseStudies: readonly CaseStudy[] = [
       { title: "Reporting and filtering", description: "Structured access to operational records and reporting views." },
       { title: "Administrative workflows", description: "Internal tools for maintaining the platform and its operational data." },
     ],
+    metrics: [
+      { value: "Production", label: "Deployment status" },
+      { value: "7", label: "Engineering responsibilities" },
+      { value: "7", label: "Core technologies" },
+      { value: "End-to-end", label: "Delivery scope" },
+    ],
     challenges: [
       { challenge: "Complex business workflows", solution: "Explicit validation and reusable domain-level operations." },
       { challenge: "Evolving data model", solution: "Structured entities, relationships, and controlled Alembic migrations." },
@@ -71,14 +78,14 @@ export const caseStudies: readonly CaseStudy[] = [
     videoId: sharedVideoId,
   },
   {
-    slug: "backproplab",
-    title: "BackpropLab",
-    kind: "Neural network engine in C++",
+    slug: "pipcore",
+    title: "Pipcore",
+    kind: "Neural network execution engine in C++",
     summary: "An educational machine-learning engine focused on the mechanics of forward propagation, backward propagation, and modular numerical computation.",
     role: "Software Engineer",
     status: "Engineering project",
     responsibility: "Engine → Tests",
-    overview: "BackpropLab explores neural-network execution below high-level frameworks through a modular C++17 implementation using Eigen and CPU computation.",
+    overview: "Pipcore explores neural-network execution below high-level frameworks through a modular C++17 implementation using Eigen and CPU computation.",
     problem: "High-level machine-learning tools hide many of the mechanics that connect tensor operations, intermediate values, gradients, and parameter updates. The project makes that execution flow explicit.",
     responsibilities: ["Modular engine architecture", "Forward propagation", "Backward propagation", "CPU-based numerical operations", "Automated testing"],
     architecture: ["Input data", "Layer operations", "Forward pass", "Backward pass", "Parameter updates"],
@@ -93,14 +100,20 @@ export const caseStudies: readonly CaseStudy[] = [
       { title: "CPU computation", description: "Numerical execution implemented for CPU-based environments." },
       { title: "Automated tests", description: "Repeatable checks around engine behavior and numerical operations." },
     ],
+    metrics: [
+      { value: "C++17", label: "Runtime language" },
+      { value: "CPU", label: "Execution target" },
+      { value: "5", label: "Engine stages" },
+      { value: "Tests", label: "Verification approach" },
+    ],
     challenges: [
       { challenge: "Gradient flow", solution: "Explicit backward operations and controlled intermediate state." },
       { challenge: "Numerical structure", solution: "Eigen primitives wrapped in modular engine responsibilities." },
       { challenge: "Correctness", solution: "Automated tests for repeatable verification of engine behavior." },
     ],
     result: "The project provides a working educational foundation for exploring neural-network execution and the mechanics behind backpropagation.",
-    stack: projectBySlug.backproplab.stack,
-    gallery: projectBySlug.backproplab.gallery,
+    stack: projectBySlug.pipcore.stack,
+    gallery: projectBySlug.pipcore.gallery,
     imageSrc: sharedImageSrc,
     videoId: sharedVideoId,
   },
@@ -126,6 +139,12 @@ export const caseStudies: readonly CaseStudy[] = [
       { title: "Firewall configuration", description: "Builds controlled UFW rules for origin access." },
       { title: "Nginx integration", description: "Coordinates reverse-proxy configuration with the protection workflow." },
       { title: "Operational safeguards", description: "Dry runs, validation, rollback, and health checks reduce deployment risk." },
+    ],
+    metrics: [
+      { value: "Open source", label: "Project status" },
+      { value: "6", label: "Operational safeguards" },
+      { value: "Dry-run", label: "Change preview" },
+      { value: "Rollback", label: "Recovery path" },
     ],
     challenges: [
       { challenge: "Changing network ranges", solution: "Repeatable synchronization from Cloudflare IP sources." },
@@ -158,13 +177,19 @@ export const caseStudies: readonly CaseStudy[] = [
       { title: "Server preparation", description: "Establishes the base operating environment for an application." },
       { title: "Deployment foundation", description: "Creates a consistent path from clean VPS to running service." },
     ],
+    metrics: [
+      { value: "Ubuntu", label: "Target platform" },
+      { value: "4", label: "Responsibility areas" },
+      { value: "5", label: "Core technologies" },
+      { value: "Repeatable", label: "Setup model" },
+    ],
     challenges: [
       { challenge: "Configuration drift", solution: "Repeatable preparation steps and explicit deployment configuration." },
       { challenge: "Manual setup", solution: "Automation for common server and application preparation work." },
     ],
     result: "The toolkit provides a reusable base for preparing Ubuntu VPS environments and deploying applications.",
     stack: ["Ubuntu", "Linux", "Docker", "Nginx", "Deployment tooling"],
-    gallery: placeholderGallery("Ubuntu VPS Bootstrap", 2),
+    gallery: createProjectGallery("Ubuntu VPS Bootstrap", 2),
     imageSrc: sharedImageSrc,
     videoId: sharedVideoId,
   },

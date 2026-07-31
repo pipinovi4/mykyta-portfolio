@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { CursorGlow } from "@/components/cursor-glow";
 import { ProjectCard } from "@/components/project-card";
+import { ProjectMedia } from "@/components/project-media";
 import { capabilities, infrastructureProjects, profile, projects } from "@/content/portfolio";
 
 const navigation = [
@@ -108,11 +109,26 @@ export default function Home() {
             <div className="about-copy">
               <p className="about-lead">I focus on production-ready backend systems, REST APIs, internal platforms, AI integrations, and deployment infrastructure.</p>
               <p>My work spans application architecture, data modeling, business logic, service integration, containerized deployment, and Linux-based operations. I also work across frontend and systems tooling when a project requires an end-to-end engineering approach.</p>
+              <div className="about-actions">
+                <a className="text-link" href="#personal-overview">Watch overview <span aria-hidden="true">↓</span></a>
+                <a className="button button--secondary" download href={profile.cv} target="_blank" rel="noreferrer">Download CV <span aria-hidden="true">↓</span></a>
+              </div>
               <dl className="profile-facts">
                 <div><dt>Primary focus</dt><dd>Backend systems</dd></div>
                 <div><dt>Working across</dt><dd>Application → infrastructure</dd></div>
                 <div><dt>Approach</dt><dd>Production-oriented</dd></div>
               </dl>
+            </div>
+            <div className="about-overview-video">
+              <ProjectMedia
+                description="Background, engineering approach, and current focus"
+                eyebrow="Personal overview"
+                id="personal-overview"
+                imageSrc="/media/project-visual.jpg"
+                projectTitle="Mykyta Bozhenko personal overview"
+                videoId={profile.overviewVideoId}
+                videoTitle="Personal overview: background, engineering approach, and current focus"
+              />
             </div>
           </div>
         </section>
@@ -171,6 +187,8 @@ export default function Home() {
               <div className="contact-actions">
                 <a className="button button--light" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
                 <a className="text-link" href={profile.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                {profile.linkedin ? <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a> : null}
+                <a className="text-link" download href={profile.cv} target="_blank" rel="noreferrer">CV <span aria-hidden="true">↓</span></a>
               </div>
             </div>
           </div>

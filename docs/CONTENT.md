@@ -16,8 +16,8 @@
 - **Website:** https://mykytabozhenko.site
 - **GitHub:** https://github.com/pipinovi4
 - **Email:** mykytabozhenko@gmail.com
-- **LinkedIn:** TBD — do not render until a real URL is provided
-- **Résumé:** Download action required; file/path TBD
+- **LinkedIn:** Pending verified URL — do not render until provided
+- **Résumé:** `/Mykyta_Bozhenko_CV.pdf`
 
 ## Hero
 
@@ -36,15 +36,15 @@
 
 ### FinControl
 
-- **Route:** `/projects/fincontrol`
+- **Route:** `/work/fincontrol`
 - **Label:** Production financial operations platform
 - **Summary:** A production platform for financial operations, covering backend architecture, REST APIs, database design, business logic, frontend integration, deployment, and maintenance.
 - **Stack:** FastAPI, PostgreSQL, SQLAlchemy 2.0, Alembic, Pydantic v2, Next.js, React, Docker
 - **Missing:** screenshots, architecture diagram, constraints, implementation narrative, and publishable repository/demo links
 
-### BackpropLab
+### Pipcore
 
-- **Route:** `/projects/backproplab`
+- **Route:** `/work/pipcore`
 - **Label:** Neural network engine and educational machine-learning project
 - **Summary:** A modular neural-network engine implemented in C++ with manual forward and backward propagation, CPU computation, and automated tests.
 - **Stack:** C++17, Eigen
@@ -53,7 +53,7 @@
 
 ### Cloudflare Edge Guard
 
-- **Route:** `/projects/cloudflare-edge-guard`
+- **Route:** `/work/cloudflare-edge-guard`
 - **Label:** Open-source origin protection toolkit
 - **Summary:** An open-source toolkit for protecting an origin server behind Cloudflare through IP synchronization, firewall and Nginx configuration, validation, rollback, and health checks.
 - **Stack:** Bash, Linux, UFW, Nginx, Cloudflare, Docker-related deployment tooling
@@ -103,7 +103,7 @@ TypeScript, React, Next.js, frontend integration, automation tooling.
 - **Copy:** Available for backend engineering, AI integration, infrastructure, and production-ready web application work.
 - **Email:** `mailto:mykytabozhenko@gmail.com`
 - **GitHub:** `https://github.com/pipinovi4`
-- **Résumé:** TBD asset
+- **Résumé:** `/Mykyta_Bozhenko_CV.pdf`
 - LinkedIn remains hidden until a valid URL is provided.
 
 ## Footer
