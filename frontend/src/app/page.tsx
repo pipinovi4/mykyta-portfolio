@@ -87,25 +87,27 @@ export default function Home() {
 
         <section className="section section--divided" id="about" aria-labelledby="about-heading">
           <div className="site-shell about-grid">
-            <div>
-              <p className="eyebrow">Engineering profile</p>
-              <h2 id="about-heading">Backend depth.<br />End-to-end context.</h2>
-            </div>
-            <figure className="portrait-frame">
-              <div className="portrait-frame__image">
-                <Image
-                  alt="Portrait of Mykyta Bozhenko"
-                  fill
-                  priority={false}
-                  sizes="(max-width: 900px) 100vw, 28vw"
-                  src="/media/mykyta-portrait.jpg"
-                />
+            <div className="about-profile">
+              <div>
+                <p className="eyebrow">Engineering profile</p>
+                <h2 id="about-heading">Backend depth.<br />End-to-end context.</h2>
               </div>
-              <figcaption>
-                <span>Mykyta Bozhenko</span>
-                <span>Backend / Software Engineer</span>
-              </figcaption>
-            </figure>
+              <figure className="portrait-frame">
+                <div className="portrait-frame__image">
+                  <Image
+                    alt="Portrait of Mykyta Bozhenko"
+                    fill
+                    priority={false}
+                    sizes="(max-width: 700px) 100vw, 42vw"
+                    src="/media/mykyta-portrait.jpg"
+                  />
+                </div>
+                <figcaption>
+                  <span>Mykyta Bozhenko</span>
+                  <span>Backend / Software Engineer</span>
+                </figcaption>
+              </figure>
+            </div>
             <div className="about-copy">
               <p className="about-lead">I focus on production-ready backend systems, REST APIs, internal platforms, AI integrations, and deployment infrastructure.</p>
               <p>My work spans application architecture, data modeling, business logic, service integration, containerized deployment, and Linux-based operations. I also work across frontend and systems tooling when a project requires an end-to-end engineering approach.</p>
