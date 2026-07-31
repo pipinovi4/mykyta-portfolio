@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CursorGlow } from "@/components/cursor-glow";
 import { ProjectCard } from "@/components/project-card";
 import { capabilities, infrastructureProjects, profile, projects } from "@/content/portfolio";
@@ -151,7 +152,7 @@ export default function Home() {
               {infrastructureProjects.map((project, index) => (
                 <article key={project.title}>
                   <div><span className="mono-label">0{index + 1}</span><span className="mono-label">{project.label}</span></div>
-                  <h3>{project.title}</h3>
+                  <h3><Link href={project.href}>{project.title} <span aria-hidden="true">→</span></Link></h3>
                   <p>{project.summary}</p>
                 </article>
               ))}

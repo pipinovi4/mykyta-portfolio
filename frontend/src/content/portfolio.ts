@@ -6,6 +6,7 @@ export type ProjectImage = {
 
 export type Project = {
   title: string;
+  slug: string;
   kind: string;
   summary: string;
   stack: readonly string[];
@@ -36,7 +37,7 @@ export const profile = {
   website: "https://mykytabozhenko.site",
 } as const;
 
-const placeholderGallery = (projectTitle: string, count: number): readonly ProjectImage[] =>
+export const placeholderGallery = (projectTitle: string, count: number): readonly ProjectImage[] =>
   Array.from({ length: count }, (_, index) => ({
     src: "/media/project-visual.jpg",
     alt: `Temporary project visual for ${projectTitle}, frame ${index + 1}`,
@@ -52,6 +53,7 @@ export const projects: readonly Project[] = [
   {
     index: "01",
     title: "FinControl",
+    slug: "fincontrol",
     kind: "Production financial operations platform",
     summary:
       "Backend architecture, REST APIs, database design, business logic, frontend integration, deployment, and ongoing maintenance in one production system.",
@@ -64,6 +66,7 @@ export const projects: readonly Project[] = [
   {
     index: "02",
     title: "BackpropLab",
+    slug: "backproplab",
     kind: "Neural network engine in C++",
     summary:
       "An educational machine-learning engine with manual forward and backward propagation, CPU computations, modular architecture, and automated tests.",
@@ -74,6 +77,7 @@ export const projects: readonly Project[] = [
   {
     index: "03",
     title: "Cloudflare Edge Guard",
+    slug: "cloudflare-edge-guard",
     kind: "Open-source origin protection toolkit",
     summary:
       "Cloudflare IP synchronization, UFW rules, Nginx configuration, validation, rollback, and health checks for protected origin infrastructure.",
@@ -115,10 +119,12 @@ export const infrastructureProjects = [
     title: "Cloudflare Edge Guard",
     summary: "Origin protection with validation, rollback, and operational health checks.",
     label: "Open source toolkit",
+    href: "/work/cloudflare-edge-guard",
   },
   {
     title: "Ubuntu VPS Bootstrap",
     summary: "Automation for preparing a clean Ubuntu server and deploying applications.",
     label: "Deployment automation",
+    href: "/work/ubuntu-vps-bootstrap",
   },
 ] as const;

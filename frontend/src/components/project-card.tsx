@@ -1,3 +1,4 @@
+import Link from "next/link";
 import type { Project } from "@/content/portfolio";
 import { ProjectGallery } from "@/components/project-gallery";
 import { ProjectMedia } from "@/components/project-media";
@@ -68,6 +69,9 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <ul className="tag-list" aria-label={`${project.title} technology stack`}>
           {project.stack.map((technology) => <li key={technology}>{technology}</li>)}
         </ul>
+        <Link className="project-card__case-link" href={`/work/${project.slug}`}>
+          View case study <span aria-hidden="true">→</span>
+        </Link>
       </footer>
     </article>
   );
