@@ -39,6 +39,8 @@ export const profile = {
   website: "https://mykytabozhenko.site",
   linkedin: null as string | null,
   upwork: "https://www.upwork.com/freelancers/~0114d1ee96979f6918",
+  fiverr: "https://www.fiverr.com/pipinx?public_mode=true",
+  responseTime: "Usually replies within 24 hours",
   telegram: {
     label: "@prustolivgra",
     url: "https://t.me/prustolivgra",
@@ -50,6 +52,8 @@ export const profile = {
   business: {
     name: "Mykyta Bozhenko IT & Delivery",
     location: "Kraków, Poland",
+    availability: "Remote worldwide",
+    timezone: "CET / CEST",
     nip: "6793345196",
     regon: "543036138",
     engagement: "Available for B2B contracts",

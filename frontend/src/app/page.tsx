@@ -197,6 +197,10 @@ export default function Home() {
                   <span className="text-sm font-semibold">{profile.phone}</span>
                 </a>
               </div>
+              <p className="mt-[-1.25rem]! mb-8! flex items-center gap-2 font-mono text-[0.66rem]! uppercase tracking-[0.08em] text-black/60">
+                <span className="size-1.5 rounded-full bg-black/55" aria-hidden="true" />
+                {profile.responseTime}
+              </p>
 
               <aside className="mb-8 border border-black/25 p-5" aria-label="Business registration details">
                 <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
@@ -207,7 +211,7 @@ export default function Home() {
                   <span className="border border-black/25 px-3 py-1.5 font-mono text-[0.6rem] font-semibold uppercase tracking-[0.1em]">B2B ready</span>
                 </div>
                 <dl className="grid gap-px bg-black/20 sm:grid-cols-3">
-                  <div className="bg-[var(--accent)] p-3"><dt className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-black/55">Location</dt><dd className="mt-1 text-sm font-semibold">{profile.business.location}</dd></div>
+                  <div className="bg-[var(--accent)] p-3"><dt className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-black/55">Location</dt><dd className="mt-1 text-sm font-semibold">{profile.business.location} · {profile.business.availability}</dd><dd className="mt-1 font-mono text-[0.64rem] uppercase tracking-[0.08em] text-black/55">{profile.business.timezone}</dd></div>
                   <div className="bg-[var(--accent)] p-3"><dt className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-black/55">NIP</dt><dd className="mt-1 font-mono text-sm">{profile.business.nip}</dd></div>
                   <div className="bg-[var(--accent)] p-3"><dt className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-black/55">REGON</dt><dd className="mt-1 font-mono text-sm">{profile.business.regon}</dd></div>
                 </dl>
@@ -218,6 +222,7 @@ export default function Home() {
                 <a className="button button--light" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
                 <a className="text-link" href={profile.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
                 <a className="text-link" href={profile.upwork} target="_blank" rel="noreferrer">Upwork <span aria-hidden="true">↗</span></a>
+                <a className="text-link" href={profile.fiverr} target="_blank" rel="noreferrer">Fiverr <span aria-hidden="true">↗</span></a>
                 <a className="text-link" href={profile.telegram.url} target="_blank" rel="noreferrer" aria-label={`Telegram ${profile.telegram.label}`}>Telegram <span aria-hidden="true">↗</span></a>
                 <a className="text-link" href={profile.x.url} target="_blank" rel="noreferrer" aria-label={`X ${profile.x.label}`}>X <span aria-hidden="true">↗</span></a>
                 {profile.linkedin ? <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a> : null}
