@@ -186,12 +186,43 @@ export default function Home() {
             </div>
             <div className="contact-copy">
               <p>Available for backend engineering, AI integration, infrastructure, and production-ready web application work.</p>
-              <div className="contact-actions">
+
+              <div className="mb-8 grid gap-px border border-black/20 bg-black/20 sm:grid-cols-2">
+                <a className="group bg-[var(--accent)] p-4 transition-colors hover:bg-white/15 focus-visible:bg-white/15" href={`mailto:${profile.email}`}>
+                  <span className="mb-2 block font-mono text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-black/55">Email</span>
+                  <span className="break-all text-sm font-semibold">{profile.email}</span>
+                </a>
+                <a className="group bg-[var(--accent)] p-4 transition-colors hover:bg-white/15 focus-visible:bg-white/15" href={profile.phoneHref}>
+                  <span className="mb-2 block font-mono text-[0.62rem] font-semibold uppercase tracking-[0.12em] text-black/55">Phone</span>
+                  <span className="text-sm font-semibold">{profile.phone}</span>
+                </a>
+              </div>
+
+              <aside className="mb-8 border border-black/25 p-5" aria-label="Business registration details">
+                <div className="mb-5 flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <p className="mb-2! font-mono text-[0.62rem]! font-semibold uppercase tracking-[0.12em] text-black/55">Registered business / Poland</p>
+                    <h3 className="m-0 text-xl font-semibold tracking-[-0.025em]">{profile.business.name}</h3>
+                  </div>
+                  <span className="border border-black/25 px-3 py-1.5 font-mono text-[0.6rem] font-semibold uppercase tracking-[0.1em]">B2B ready</span>
+                </div>
+                <dl className="grid gap-px bg-black/20 sm:grid-cols-3">
+                  <div className="bg-[var(--accent)] p-3"><dt className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-black/55">Location</dt><dd className="mt-1 text-sm font-semibold">{profile.business.location}</dd></div>
+                  <div className="bg-[var(--accent)] p-3"><dt className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-black/55">NIP</dt><dd className="mt-1 font-mono text-sm">{profile.business.nip}</dd></div>
+                  <div className="bg-[var(--accent)] p-3"><dt className="font-mono text-[0.58rem] uppercase tracking-[0.1em] text-black/55">REGON</dt><dd className="mt-1 font-mono text-sm">{profile.business.regon}</dd></div>
+                </dl>
+                <p className="mt-4! mb-0! font-mono text-[0.68rem]! uppercase tracking-[0.08em] text-black/60">{profile.business.engagement}</p>
+              </aside>
+
+              <nav className="contact-actions" aria-label="Contact channels">
                 <a className="button button--light" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
                 <a className="text-link" href={profile.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                <a className="text-link" href={profile.upwork} target="_blank" rel="noreferrer">Upwork <span aria-hidden="true">↗</span></a>
+                <a className="text-link" href={profile.telegram.url} target="_blank" rel="noreferrer" aria-label={`Telegram ${profile.telegram.label}`}>Telegram <span aria-hidden="true">↗</span></a>
+                <a className="text-link" href={profile.x.url} target="_blank" rel="noreferrer" aria-label={`X ${profile.x.label}`}>X <span aria-hidden="true">↗</span></a>
                 {profile.linkedin ? <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a> : null}
                 <a className="text-link" download href={profile.cv} target="_blank" rel="noreferrer">CV <span aria-hidden="true">↓</span></a>
-              </div>
+              </nav>
             </div>
           </div>
         </section>
