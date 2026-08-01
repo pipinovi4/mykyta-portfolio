@@ -32,7 +32,7 @@ export const profile = {
   introduction:
     "I design and build backend systems, REST APIs, internal platforms, AI integrations, and the infrastructure required to deploy and operate them.",
   coreStack: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "Linux", "Nginx"],
-  email: "mykytabozhenko@gmail.com",
+  email: "mykyta.bozhenko.dev@gmail.com",
   phone: "+48 732 761 454",
   phoneHref: "tel:+48732761454",
   github: "https://github.com/pipinovi4",

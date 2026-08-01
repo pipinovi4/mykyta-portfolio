@@ -15,7 +15,7 @@
 - **Role:** Python Backend Engineer / Software Engineer
 - **Website:** https://mykytabozhenko.site
 - **GitHub:** https://github.com/pipinovi4
-- **Email:** mykytabozhenko@gmail.com
+- **Email:** mykyta.bozhenko.dev@gmail.com
 - **LinkedIn:** Pending verified URL — do not render until provided
 - **Résumé:** `/Mykyta_Bozhenko_CV.pdf`
 
@@ -101,7 +101,7 @@ TypeScript, React, Next.js, frontend integration, automation tooling.
 
 - **Heading:** Let’s build something reliable.
 - **Copy:** Available for backend engineering, AI integration, infrastructure, and production-ready web application work.
-- **Email:** `mailto:mykytabozhenko@gmail.com`
+- **Email:** `mailto:mykyta.bozhenko.dev@gmail.com`
 - **GitHub:** `https://github.com/pipinovi4`
 - **Résumé:** `/Mykyta_Bozhenko_CV.pdf`
 - LinkedIn remains hidden until a valid URL is provided.
