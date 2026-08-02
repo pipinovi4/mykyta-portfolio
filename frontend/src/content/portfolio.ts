@@ -112,6 +112,18 @@ export const projects: readonly Project[] = [
     gallery: createProjectGallery("Cloudflare Edge Guard", 2),
     ...sharedProjectMedia,
   },
+  {
+    index: "04",
+    title: "Ubuntu VPS Bootstrap",
+    slug: "ubuntu-vps-bootstrap",
+    kind: "Infrastructure automation toolkit",
+    summary:
+      "A Bash toolkit I engineered to provision Ubuntu servers and deploy Docker Compose applications through repeatable, guarded operational workflows.",
+    stack: ["Bash", "Ubuntu", "Docker", "Docker Compose", "systemd", "UFW", "fail2ban", "Git", "Bats", "GitHub Actions"],
+    scope: ["Automation architecture", "Server provisioning", "Deployment workflow", "Access safeguards", "Configuration validation", "Automated testing"],
+    gallery: createProjectGallery("Ubuntu VPS Bootstrap", 3),
+    ...sharedProjectMedia,
+  },
 ];
 
 export const capabilities: readonly Capability[] = [
