@@ -19,14 +19,14 @@ export async function generateMetadata({ params }: CaseStudyPageProps): Promise<
   const study = getCaseStudy(slug);
   if (!study) return {};
   return {
-    title: study.title,
-    description: study.summary,
+    title: study.seoTitle ?? study.title,
+    description: study.metaDescription ?? study.summary,
     alternates: { canonical: `/work/${study.slug}` },
     openGraph: {
       type: "article",
       url: `/work/${study.slug}`,
-      title: `${study.title} — Engineering case study`,
-      description: study.summary,
+      title: study.seoTitle ?? `${study.title} — Engineering case study`,
+      description: study.openGraphDescription ?? study.metaDescription ?? study.summary,
     },
   };
 }
