@@ -8,6 +8,8 @@ export type Project = {
   title: string;
   slug: string;
   kind: string;
+  status: string;
+  statusTone: "production" | "experimental" | "stable" | "early";
   summary: string;
   stack: readonly string[];
   index: string;
@@ -80,6 +82,8 @@ export const projects: readonly Project[] = [
     title: "FinControl",
     slug: "fincontrol",
     kind: "Credit operations and workflow platform",
+    status: "Production",
+    statusTone: "production",
     summary:
       "A role-based platform combining REST APIs, workflow automation, document handling, dashboards, notifications, and a guided Telegram application flow.",
     stack: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Alembic", "Next.js", "RabbitMQ", "Telegram Bot", "MinIO", "Docker", "GitHub Actions"],
@@ -93,6 +97,8 @@ export const projects: readonly Project[] = [
     title: "BackpropLab",
     slug: "pipcore",
     kind: "Neural network systems engineering lab",
+    status: "Experimental",
+    statusTone: "experimental",
     summary:
       "A C++17 neural-network lab where I implemented custom tensors, manual backpropagation, optimizers, attention components, and experimental Transformer workflows.",
     stack: ["C++17", "Eigen", "OpenMP", "CMake", "Conan", "GoogleTest", "Python", "NumPy", "SentencePiece"],
@@ -105,6 +111,8 @@ export const projects: readonly Project[] = [
     title: "Cloudflare Edge Guard",
     slug: "cloudflare-edge-guard",
     kind: "Infrastructure automation toolkit",
+    status: "Released / v2.0.0",
+    statusTone: "stable",
     summary:
       "A Bash toolkit I engineered to configure and maintain Cloudflare-restricted Nginx origins without disrupting SSH or unrelated firewall rules.",
     stack: ["Bash", "Nginx", "UFW", "Cloudflare", "systemd", "Bats", "ShellCheck", "GitHub Actions"],
@@ -117,6 +125,8 @@ export const projects: readonly Project[] = [
     title: "Ubuntu VPS Bootstrap",
     slug: "ubuntu-vps-bootstrap",
     kind: "Infrastructure automation toolkit",
+    status: "Released / v0.1.0",
+    statusTone: "early",
     summary:
       "A Bash toolkit I engineered to provision Ubuntu servers and deploy Docker Compose applications through repeatable, guarded operational workflows.",
     stack: ["Bash", "Ubuntu", "Docker", "Docker Compose", "systemd", "UFW", "fail2ban", "Git", "Bats", "GitHub Actions"],

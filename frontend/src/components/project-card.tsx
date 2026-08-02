@@ -22,8 +22,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
           </div>
         </div>
         <span className="project-card__status">
-          <span aria-hidden="true" className="status-dot" />
-          Case study in progress
+          <span aria-hidden="true" className={`status-dot status-dot--${project.statusTone}`} />
+          {project.status}
         </span>
       </header>
 
