@@ -56,8 +56,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 ))}
               </div>
               <div className="system-panel__footer">
-                <span>Application → data → operations</span>
-                <span className="accent-text">Production</span>
+                <span>{project.lifecycle}</span>
+                <span className="accent-text">{project.status}</span>
               </div>
             </div>
           ) : null}

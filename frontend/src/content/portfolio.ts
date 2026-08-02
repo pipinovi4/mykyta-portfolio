@@ -10,6 +10,7 @@ export type Project = {
   kind: string;
   status: string;
   statusTone: "production" | "experimental" | "stable" | "early";
+  lifecycle: string;
   summary: string;
   stack: readonly string[];
   index: string;
@@ -30,9 +31,9 @@ export type Capability = {
 export const profile = {
   name: "Mykyta Bozhenko",
   role: "Python Backend Engineer / Software Engineer",
-  headline: "Building production systems, AI integrations, and reliable infrastructure.",
+  headline: "Backend systems from domain logic to deployment.",
   introduction:
-    "I design and build backend systems, REST APIs, internal platforms, AI integrations, and the infrastructure required to deploy and operate them.",
+    "I design APIs, data models, and business workflows, then connect them to the integrations and infrastructure required to operate them.",
   coreStack: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Docker", "Linux", "Nginx"],
   email: "mykyta.bozhenko.dev@gmail.com",
   phone: "+48 732 761 454",
@@ -84,10 +85,11 @@ export const projects: readonly Project[] = [
     kind: "Credit operations and workflow platform",
     status: "Production",
     statusTone: "production",
+    lifecycle: "Application → data → operations",
     summary:
-      "A role-based platform combining REST APIs, workflow automation, document handling, dashboards, notifications, and a guided Telegram application flow.",
+      "A role-based platform connecting credit applications, operational workflows, document storage, asynchronous notifications, reporting, and deployment automation.",
     stack: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Alembic", "Next.js", "RabbitMQ", "Telegram Bot", "MinIO", "Docker", "GitHub Actions"],
-    scope: ["Backend architecture", "REST API / RBAC", "Data modeling", "Integrations", "Operational frontend", "Deployment automation"],
+    scope: ["Backend architecture", "REST API and RBAC", "Relational data model", "External integrations", "Operational frontend", "Deployment automation"],
     featured: true,
     gallery: createProjectGallery("FinControl", 4),
     ...sharedProjectMedia,
@@ -99,8 +101,9 @@ export const projects: readonly Project[] = [
     kind: "Neural network systems engineering lab",
     status: "Experimental",
     statusTone: "experimental",
+    lifecycle: "Tensor core → gradients → execution",
     summary:
-      "A C++17 neural-network lab where I implemented custom tensors, manual backpropagation, optimizers, attention components, and experimental Transformer workflows.",
+      "A C++17 engineering lab for custom tensors, explicit gradients, optimizers, numerical components, and experimental Transformer-style execution.",
     stack: ["C++17", "Eigen", "OpenMP", "CMake", "Conan", "GoogleTest", "Python", "NumPy", "SentencePiece"],
     scope: ["Tensor API", "Manual gradients", "Layer architecture", "Optimizers", "Data pipelines", "Build and tests"],
     gallery: createProjectGallery("BackpropLab", 3),
@@ -110,13 +113,14 @@ export const projects: readonly Project[] = [
     index: "03",
     title: "Cloudflare Edge Guard",
     slug: "cloudflare-edge-guard",
-    kind: "Infrastructure automation toolkit",
+    kind: "Cloudflare origin protection toolkit",
     status: "Released / v2.0.0",
     statusTone: "stable",
+    lifecycle: "Origin → validation → enforcement",
     summary:
-      "A Bash toolkit I engineered to configure and maintain Cloudflare-restricted Nginx origins without disrupting SSH or unrelated firewall rules.",
+      "A Bash toolkit for validating Cloudflare ranges and coordinating scoped Nginx and UFW changes without taking ownership of unrelated host configuration.",
     stack: ["Bash", "Nginx", "UFW", "Cloudflare", "systemd", "Bats", "ShellCheck", "GitHub Actions"],
-    scope: ["Infrastructure architecture", "Nginx / UFW orchestration", "Validation", "Rollback", "Linux operations", "Automated testing"],
+    scope: ["Automation architecture", "Range validation", "Nginx configuration", "Scoped firewall rules", "Rollback boundaries", "Automated testing"],
     gallery: createProjectGallery("Cloudflare Edge Guard", 2),
     ...sharedProjectMedia,
   },
@@ -124,13 +128,14 @@ export const projects: readonly Project[] = [
     index: "04",
     title: "Ubuntu VPS Bootstrap",
     slug: "ubuntu-vps-bootstrap",
-    kind: "Infrastructure automation toolkit",
+    kind: "Ubuntu provisioning and deployment toolkit",
     status: "Released / v0.1.0",
     statusTone: "early",
+    lifecycle: "Server → provisioning → deployment",
     summary:
-      "A Bash toolkit I engineered to provision Ubuntu servers and deploy Docker Compose applications through repeatable, guarded operational workflows.",
+      "A Bash toolkit for guarded Ubuntu provisioning and locked, non-root delivery of Docker Compose applications.",
     stack: ["Bash", "Ubuntu", "Docker", "Docker Compose", "systemd", "UFW", "fail2ban", "Git", "Bats", "GitHub Actions"],
-    scope: ["Automation architecture", "Server provisioning", "Deployment workflow", "Access safeguards", "Configuration validation", "Automated testing"],
+    scope: ["Automation architecture", "Server provisioning", "Docker environment", "Access safeguards", "Deployment workflow", "Automated testing"],
     gallery: createProjectGallery("Ubuntu VPS Bootstrap", 3),
     ...sharedProjectMedia,
   },
@@ -139,41 +144,41 @@ export const projects: readonly Project[] = [
 export const capabilities: readonly Capability[] = [
   {
     number: "01",
-    title: "Backend systems",
-    description: "Production APIs, data models, business logic, and service integration.",
-    technologies: ["Python", "FastAPI", "PostgreSQL", "SQLAlchemy", "Alembic", "Pydantic"],
+    title: "Backend architecture",
+    description: "APIs, validation boundaries, business rules, authentication, and application-service design.",
+    technologies: ["Python", "FastAPI", "Pydantic"],
   },
   {
     number: "02",
-    title: "Production & infrastructure",
-    description: "Containerized applications, Linux operations, reverse proxies, and deployment automation.",
-    technologies: ["Docker", "Linux", "Nginx", "Cloudflare", "VPS automation"],
+    title: "Data and asynchronous workflows",
+    description: "Relational modeling, schema evolution, transactional operations, messaging, and background processing.",
+    technologies: ["PostgreSQL", "SQLAlchemy", "Alembic", "RabbitMQ"],
   },
   {
     number: "03",
-    title: "AI & numerical software",
-    description: "AI integrations and lower-level numerical systems when the product calls for them.",
-    technologies: ["PyTorch", "C++", "Eigen", "AI integrations"],
+    title: "Deployment and Linux operations",
+    description: "Container delivery, reverse proxies, host configuration, health checks, and infrastructure automation.",
+    technologies: ["Docker", "Linux", "Nginx", "Bash", "Cloudflare"],
   },
   {
     number: "04",
-    title: "Product integration",
-    description: "Connecting backend platforms to usable, maintainable product interfaces.",
-    technologies: ["TypeScript", "React", "Next.js", "Automation tooling"],
+    title: "Cross-stack and numerical engineering",
+    description: "Product interfaces and lower-level numerical components when system boundaries require them.",
+    technologies: ["TypeScript", "Next.js", "React", "C++17", "Eigen", "GoogleTest"],
   },
 ];
 
 export const infrastructureProjects = [
   {
     title: "Cloudflare Edge Guard",
-    summary: "Origin protection with validation, rollback, and operational health checks.",
-    label: "Open source toolkit",
+    summary: "Coordinates trusted proxy ranges, Nginx configuration, and scoped UFW rules through staged validation and rollback-aware updates.",
+    label: "Origin protection toolkit",
     href: "/work/cloudflare-edge-guard",
   },
   {
     title: "Ubuntu VPS Bootstrap",
-    summary: "Automation for preparing a clean Ubuntu server and deploying applications.",
-    label: "Deployment automation",
+    summary: "Separates privileged host provisioning from locked, non-root application delivery with guarded SSH changes and health-checked Compose releases.",
+    label: "Provisioning and deployment toolkit",
     href: "/work/ubuntu-vps-bootstrap",
   },
 ] as const;

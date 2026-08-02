@@ -48,17 +48,17 @@ export default function Home() {
           <div className="site-shell hero-inner">
             <div className="hero-meta-row">
               <p className="availability"><span className="status-dot" /> Available for selected work</p>
-              <p className="mono-label hero-location">Backend / Systems / Infrastructure</p>
+              <p className="mono-label hero-location">Backend Engineering / Software Systems</p>
             </div>
 
             <div className="hero-copy">
               <p className="eyebrow">{profile.role}</p>
-              <h1 id="hero-heading">Building production systems, <span>AI integrations</span>, and reliable infrastructure.</h1>
+              <h1 id="hero-heading">Backend systems from domain logic to <span>deployment.</span></h1>
               <div className="hero-support">
                 <p>{profile.introduction}</p>
                 <div className="hero-actions">
                   <a className="button button--primary" href="#work">View selected work <span aria-hidden="true">↓</span></a>
-                  <a className="button button--secondary" href={`mailto:${profile.email}`}>Contact me <span aria-hidden="true">↗</span></a>
+                  <a className="button button--secondary" href={`mailto:${profile.email}`}>Start a conversation <span aria-hidden="true">↗</span></a>
                 </div>
               </div>
             </div>
@@ -76,10 +76,10 @@ export default function Home() {
           <div className="site-shell">
             <div className="section-heading">
               <div>
-                <p className="eyebrow">Selected work / 2026</p>
-                <h2 id="work-heading">Systems built for real operational work.</h2>
+                <p className="eyebrow">Selected work</p>
+                <h2 id="work-heading">Applications, experiments, and infrastructure tools.</h2>
               </div>
-              <p>A selection of backend systems, engineering tools, and infrastructure projects.</p>
+              <p>Four projects showing production backend work, lower-level systems engineering, and reusable operational automation.</p>
             </div>
 
             <div className="project-grid">
@@ -93,7 +93,7 @@ export default function Home() {
             <div className="about-profile">
               <div>
                 <p className="eyebrow">Engineering profile</p>
-                <h2 id="about-heading">Backend depth.<br />End-to-end context.</h2>
+                <h2 id="about-heading">Backend depth across<br />system boundaries.</h2>
               </div>
               <figure className="portrait-frame">
                 <div className="portrait-frame__image">
@@ -112,16 +112,16 @@ export default function Home() {
               </figure>
             </div>
             <div className="about-copy">
-              <p className="about-lead">I focus on production-ready backend systems, REST APIs, internal platforms, AI integrations, and deployment infrastructure.</p>
-              <p>My work spans application architecture, data modeling, business logic, service integration, containerized deployment, and Linux-based operations. I also work across frontend and systems tooling when a project requires an end-to-end engineering approach.</p>
+              <p className="about-lead">I work backend-first, with enough cross-stack context to own complete delivery paths.</p>
+              <p>My work starts with application structure, data relationships, and business rules. I define clear boundaries between APIs, persistence, background processing, and external services. When delivery requires it, I also work with frontend integration, containers, Linux hosts, and deployment workflows—without treating those areas as substitutes for backend depth.</p>
               <div className="about-actions">
                 <a className="text-link" href="#personal-overview">Watch overview <span aria-hidden="true">↓</span></a>
                 <a className="button button--secondary" download href={profile.cv} target="_blank" rel="noreferrer">Download CV <span aria-hidden="true">↓</span></a>
               </div>
               <dl className="profile-facts">
-                <div><dt>Primary focus</dt><dd>Backend systems</dd></div>
-                <div><dt>Working across</dt><dd>Application → infrastructure</dd></div>
-                <div><dt>Approach</dt><dd>Production-oriented</dd></div>
+                <div><dt>Primary focus</dt><dd>Backend architecture</dd></div>
+                <div><dt>Working across</dt><dd>Data → integrations → deployment</dd></div>
+                <div><dt>Approach</dt><dd>Explicit and production-oriented</dd></div>
               </dl>
             </div>
             <div className="about-overview-video">
@@ -143,9 +143,9 @@ export default function Home() {
             <div className="section-heading section-heading--compact">
               <div>
                 <p className="eyebrow">Capabilities / Stack</p>
-                <h2 id="stack-heading">Tools follow the system.</h2>
+                <h2 id="stack-heading">Responsibilities before tools.</h2>
               </div>
-              <p>Technology grouped by engineering responsibility—not by logo count.</p>
+              <p>Technologies grouped by the engineering problems they help solve.</p>
             </div>
 
             <div className="capability-list">
@@ -166,8 +166,8 @@ export default function Home() {
           <div className="site-shell infrastructure-grid">
             <div>
               <p className="eyebrow">Open source / Infrastructure</p>
-              <h2 id="infrastructure-heading">Engineering beyond application code.</h2>
-              <p className="infrastructure-intro">Deployment automation, origin protection, Linux tooling, validation workflows, rollback mechanisms, and operational health checks.</p>
+              <h2 id="infrastructure-heading">Reusable tools for safer operations.</h2>
+              <p className="infrastructure-intro">Focused Bash tooling for validating infrastructure changes, protecting access paths, and making single-host deployments easier to inspect and repeat.</p>
             </div>
             <div className="infrastructure-list">
               {infrastructureProjects.map((project, index) => (
@@ -184,11 +184,11 @@ export default function Home() {
         <section className="contact-section" id="contact" aria-labelledby="contact-heading">
           <div className="site-shell contact-grid">
             <div>
-              <p className="eyebrow">Start a conversation</p>
+              <p className="eyebrow">Available for B2B work</p>
               <h2 id="contact-heading">Let&apos;s build something <span>reliable.</span></h2>
             </div>
             <div className="contact-copy">
-              <p>Available for backend engineering, AI integration, infrastructure, and production-ready web application work.</p>
+              <p>Available for backend and software engineering, external integrations, and application infrastructure work through a registered Polish business.</p>
 
               <div className="mb-8 grid gap-px border border-black/20 bg-black/20 sm:grid-cols-2">
                 <a className="group bg-[var(--accent)] p-4 transition-colors hover:bg-white/15 focus-visible:bg-white/15" href={`mailto:${profile.email}`}>
@@ -223,8 +223,8 @@ export default function Home() {
 
               <nav aria-label="Contact channels">
                 <div className="grid gap-2 sm:grid-cols-3">
-                  <a className="button button--light justify-between!" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
-                  <a className="button justify-between! border-black/35! bg-black/8! text-[#08090b]! hover:bg-black/14!" href={profile.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                  <a className="button button--light justify-between!" href={`mailto:${profile.email}`}>Send email <span aria-hidden="true">↗</span></a>
+                  <a className="button justify-between! border-black/35! bg-black/8! text-[#08090b]! hover:bg-black/14!" href={profile.github} target="_blank" rel="noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
                   <a className="button justify-between! border-white/35! bg-white/25! text-[#08090b]! hover:bg-white/35!" download href={profile.cv} target="_blank" rel="noreferrer">Download CV <span aria-hidden="true">↓</span></a>
                 </div>
 
@@ -247,7 +247,7 @@ export default function Home() {
       <footer className="site-footer">
         <div className="site-shell footer-inner">
           <div><strong>{profile.name}</strong><span>{profile.role}</span></div>
-          <p>© {new Date().getFullYear()} / Built for production</p>
+          <p>© {new Date().getFullYear()} / Designed and built by Mykyta Bozhenko</p>
           <a href="#top">Back to top ↑</a>
         </div>
       </footer>
