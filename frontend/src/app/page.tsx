@@ -221,15 +221,23 @@ export default function Home() {
                 <p className="mt-4! mb-0! font-mono text-[0.68rem]! uppercase tracking-[0.08em] text-black/60">{profile.business.engagement}</p>
               </aside>
 
-              <nav className="contact-actions" aria-label="Contact channels">
-                <a className="button button--light" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
-                <a className="text-link" href={profile.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
-                <a className="text-link" href={profile.upwork} target="_blank" rel="noreferrer">Upwork <span aria-hidden="true">↗</span></a>
-                <a className="text-link" href={profile.fiverr} target="_blank" rel="noreferrer">Fiverr <span aria-hidden="true">↗</span></a>
-                <a className="text-link" href={profile.telegram.url} target="_blank" rel="noreferrer" aria-label={`Telegram ${profile.telegram.label}`}>Telegram <span aria-hidden="true">↗</span></a>
-                <a className="text-link" href={profile.x.url} target="_blank" rel="noreferrer" aria-label={`X ${profile.x.label}`}>X <span aria-hidden="true">↗</span></a>
-                {profile.linkedin ? <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a> : null}
-                <a className="text-link" download href={profile.cv} target="_blank" rel="noreferrer">CV <span aria-hidden="true">↓</span></a>
+              <nav aria-label="Contact channels">
+                <div className="grid gap-2 sm:grid-cols-3">
+                  <a className="button button--light justify-between!" href={`mailto:${profile.email}`}>Email me <span aria-hidden="true">↗</span></a>
+                  <a className="button justify-between! border-black/35! bg-black/8! text-[#08090b]! hover:bg-black/14!" href={profile.github} target="_blank" rel="noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+                  <a className="button justify-between! border-white/35! bg-white/25! text-[#08090b]! hover:bg-white/35!" download href={profile.cv} target="_blank" rel="noreferrer">Download CV <span aria-hidden="true">↓</span></a>
+                </div>
+
+                <div className="mt-5 border-t border-black/20 pt-4">
+                  <span className="mb-2 block font-mono text-[0.6rem] font-semibold uppercase tracking-[0.12em] text-black/50">Other channels</span>
+                  <div className="contact-actions gap-x-1! gap-y-0!">
+                    <a className="text-link" href={profile.upwork} target="_blank" rel="noreferrer">Upwork <span aria-hidden="true">↗</span></a>
+                    <a className="text-link" href={profile.fiverr} target="_blank" rel="noreferrer">Fiverr <span aria-hidden="true">↗</span></a>
+                    <a className="text-link" href={profile.telegram.url} target="_blank" rel="noreferrer" aria-label={`Telegram ${profile.telegram.label}`}>Telegram <span aria-hidden="true">↗</span></a>
+                    <a className="text-link" href={profile.x.url} target="_blank" rel="noreferrer" aria-label={`X ${profile.x.label}`}>X <span aria-hidden="true">↗</span></a>
+                    {profile.linkedin ? <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a> : null}
+                  </div>
+                </div>
               </nav>
             </div>
           </div>
