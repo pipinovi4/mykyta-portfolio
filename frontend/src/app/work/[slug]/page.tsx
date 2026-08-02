@@ -46,7 +46,7 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
       <a className="skip-link" href="#case-content">Skip to content</a>
       <header className="case-header">
         <div className="site-shell case-header__inner">
-          <Link href="/" className="brand"><span className="brand-mark" aria-hidden="true">MB</span><span>Mykyta Bozhenko</span></Link>
+          <Link href="/" className="brand"><span className="size-8 shrink-0 border border-[var(--border-strong)] bg-[url('/media/mykyta-portrait.jpg')] bg-cover bg-[position:center_24%]" aria-hidden="true" /><span>Mykyta Bozhenko</span></Link>
           <Link href="/#work" className="case-header__back">← Selected work</Link>
         </div>
       </header>

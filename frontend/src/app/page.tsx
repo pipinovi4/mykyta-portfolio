@@ -21,7 +21,10 @@ export default function Home() {
       <header className="site-header">
         <div className="site-shell header-inner">
           <a className="brand" href="#top" aria-label="Mykyta Bozhenko, back to top">
-            <span className="brand-mark" aria-hidden="true">MB</span>
+            <span
+              className="size-8 shrink-0 border border-[var(--border-strong)] bg-[url('/media/mykyta-portrait.jpg')] bg-cover bg-[position:center_24%]"
+              aria-hidden="true"
+            />
             <span>{profile.name}</span>
           </a>
 
