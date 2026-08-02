@@ -90,14 +90,14 @@ export const projects: readonly Project[] = [
   },
   {
     index: "02",
-    title: "Pipcore",
+    title: "BackpropLab",
     slug: "pipcore",
-    kind: "Neural network execution engine in C++",
+    kind: "Neural network systems engineering lab",
     summary:
-      "An educational machine-learning engine with manual forward and backward propagation, CPU computations, modular architecture, and automated tests.",
-    stack: ["C++17", "Eigen", "CPU computation", "Automated tests"],
-    scope: ["Engine architecture", "Forward pass", "Backpropagation", "Automated tests"],
-    gallery: createProjectGallery("Pipcore", 3),
+      "A C++17 neural-network lab where I implemented custom tensors, manual backpropagation, optimizers, attention components, and experimental Transformer workflows.",
+    stack: ["C++17", "Eigen", "OpenMP", "CMake", "Conan", "GoogleTest", "Python", "NumPy", "SentencePiece"],
+    scope: ["Tensor API", "Manual gradients", "Layer architecture", "Optimizers", "Data pipelines", "Build and tests"],
+    gallery: createProjectGallery("BackpropLab", 3),
     ...sharedProjectMedia,
   },
   {
