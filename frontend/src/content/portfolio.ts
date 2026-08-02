@@ -40,7 +40,7 @@ export const profile = {
   phoneHref: "tel:+48732761454",
   github: "https://github.com/pipinovi4",
   website: "https://mykytabozhenko.site",
-  linkedin: null as string | null,
+  linkedin: "https://www.linkedin.com/in/mykyta-bozhenko-1b0663426/",
   upwork: "https://www.upwork.com/freelancers/~0114d1ee96979f6918",
   fiverr: "https://www.fiverr.com/pipinx?public_mode=true",
   responseTime: "Usually replies within 24 hours",

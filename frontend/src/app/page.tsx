@@ -222,10 +222,11 @@ export default function Home() {
               </aside>
 
               <nav aria-label="Contact channels">
-                <div className="grid gap-2 sm:grid-cols-3">
+                <div className="grid gap-2 sm:grid-cols-2">
                   <a className="button button--light justify-between!" href={`mailto:${profile.email}`}>Send email <span aria-hidden="true">↗</span></a>
                   <a className="button justify-between! border-black/35! bg-black/8! text-[#08090b]! hover:bg-black/14!" href={profile.github} target="_blank" rel="noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
                   <a className="button justify-between! border-white/35! bg-white/25! text-[#08090b]! hover:bg-white/35!" download href={profile.cv} target="_blank" rel="noreferrer">Download CV <span aria-hidden="true">↓</span></a>
+                  <a className="button justify-between! border-[#0a66c2]! bg-[#0a66c2]! text-white! hover:border-[#084f96]! hover:bg-[#084f96]!" href={profile.linkedin} target="_blank" rel="noreferrer">View LinkedIn <span aria-hidden="true">↗</span></a>
                 </div>
 
                 <div className="mt-5 border-t border-black/20 pt-4">
@@ -235,7 +236,6 @@ export default function Home() {
                     <a className="text-link" href={profile.fiverr} target="_blank" rel="noreferrer">Fiverr <span aria-hidden="true">↗</span></a>
                     <a className="text-link" href={profile.telegram.url} target="_blank" rel="noreferrer" aria-label={`Telegram ${profile.telegram.label}`}>Telegram <span aria-hidden="true">↗</span></a>
                     <a className="text-link" href={profile.x.url} target="_blank" rel="noreferrer" aria-label={`X ${profile.x.label}`}>X <span aria-hidden="true">↗</span></a>
-                    {profile.linkedin ? <a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <span aria-hidden="true">↗</span></a> : null}
                   </div>
                 </div>
               </nav>
