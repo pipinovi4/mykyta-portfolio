@@ -13,9 +13,10 @@ export default function WorkPage() {
   return (
     <>
       <CursorGlow />
+      <a className="skip-link" href="#work-content">Skip to content</a>
       <header className="case-header"><div className="site-shell case-header__inner"><Link href="/" className="brand"><span className="size-8 shrink-0 border border-[var(--border-strong)] bg-[url('/media/mykyta-portrait.jpg')] bg-cover bg-[position:center_24%]" aria-hidden="true" /><span>Mykyta Bozhenko</span></Link><Link href="/">← Home</Link></div></header>
-      <main>
-        <section className="work-index-hero"><div className="site-shell"><p className="eyebrow">Project catalog</p><h1>Selected work.</h1><p>Production systems, engineering tools, and infrastructure projects.</p></div></section>
+      <main id="work-content">
+        <section className="work-index-hero"><div className="site-shell"><p className="eyebrow">Project catalog</p><h1>Selected work.</h1><p>Product engineering, systems tooling, and infrastructure automation.</p></div></section>
         <section className="section"><div className="site-shell project-grid">{projects.map((project) => <ProjectCard project={project} key={project.slug} />)}</div></section>
       </main>
     </>

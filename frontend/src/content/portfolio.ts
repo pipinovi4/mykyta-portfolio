@@ -17,7 +17,10 @@ export type Project = {
   featured?: boolean;
   scope?: readonly string[];
   imageSrc: string;
-  videoId: string;
+  imageAlt: string;
+  mediaLabel: string;
+  repositoryUrl?: string;
+  repositoryLabel?: string;
   gallery: readonly ProjectImage[];
 };
 
@@ -62,19 +65,6 @@ export const profile = {
     engagement: "Available for B2B contracts",
   },
   cv: "/Mykyta_Bozhenko_CV.pdf",
-  overviewVideoId: "xz7RqTj7MbM",
-} as const;
-
-export const createProjectGallery = (projectTitle: string, count: number): readonly ProjectImage[] =>
-  Array.from({ length: count }, (_, index) => ({
-    src: "/media/project-visual.jpg",
-    alt: `${projectTitle} project visual, frame ${index + 1}`,
-    caption: `${projectTitle} — project view ${String(index + 1).padStart(2, "0")}.`,
-  }));
-
-const sharedProjectMedia = {
-  imageSrc: "/media/project-visual.jpg",
-  videoId: "xz7RqTj7MbM",
 } as const;
 
 export const projects: readonly Project[] = [
@@ -83,7 +73,7 @@ export const projects: readonly Project[] = [
     title: "FinControl",
     slug: "fincontrol",
     kind: "Credit operations and workflow platform",
-    status: "Production",
+    status: "Private product",
     statusTone: "production",
     lifecycle: "Application → data → operations",
     summary:
@@ -91,13 +81,22 @@ export const projects: readonly Project[] = [
     stack: ["FastAPI", "PostgreSQL", "SQLAlchemy", "Alembic", "Next.js", "RabbitMQ", "Telegram Bot", "MinIO", "Docker", "GitHub Actions"],
     scope: ["Backend architecture", "REST API and RBAC", "Relational data model", "External integrations", "Operational frontend", "Deployment automation"],
     featured: true,
-    gallery: createProjectGallery("FinControl", 4),
-    ...sharedProjectMedia,
+    imageSrc: "/media/projects/fincontrol/login.png",
+    imageAlt: "FinControl account sign-in interface",
+    mediaLabel: "Real product interface",
+    repositoryLabel: "Private source",
+    gallery: [
+      {
+        src: "/media/projects/fincontrol/login.png",
+        alt: "FinControl account sign-in screen with email and password fields",
+        caption: "FinControl web dashboard — account sign-in interface captured from the application.",
+      },
+    ],
   },
   {
     index: "02",
     title: "BackpropLab",
-    slug: "pipcore",
+    slug: "backprop-lab",
     kind: "Neural network systems engineering lab",
     status: "Experimental",
     statusTone: "experimental",
@@ -106,8 +105,18 @@ export const projects: readonly Project[] = [
       "A C++17 engineering lab for custom tensors, explicit gradients, optimizers, numerical components, and experimental Transformer-style execution.",
     stack: ["C++17", "Eigen", "OpenMP", "CMake", "Conan", "GoogleTest", "Python", "NumPy", "SentencePiece"],
     scope: ["Tensor API", "Manual gradients", "Layer architecture", "Optimizers", "Data pipelines", "Build and tests"],
-    gallery: createProjectGallery("BackpropLab", 3),
-    ...sharedProjectMedia,
+    imageSrc: "/media/projects/backprop-lab/repository.png",
+    imageAlt: "BackpropLab public GitHub repository overview",
+    mediaLabel: "Public source repository",
+    repositoryUrl: "https://github.com/pipinovi4/backprop-lab-cpp",
+    repositoryLabel: "View source",
+    gallery: [
+      {
+        src: "/media/projects/backprop-lab/repository.png",
+        alt: "BackpropLab public GitHub repository showing C++ source, tests, examples, and documentation",
+        caption: "The public BackpropLab repository, including C++ source, tests, examples, and engineering documentation.",
+      },
+    ],
   },
   {
     index: "03",
@@ -121,8 +130,18 @@ export const projects: readonly Project[] = [
       "A Bash toolkit for validating Cloudflare ranges and coordinating scoped Nginx and UFW changes without taking ownership of unrelated host configuration.",
     stack: ["Bash", "Nginx", "UFW", "Cloudflare", "systemd", "Bats", "ShellCheck", "GitHub Actions"],
     scope: ["Automation architecture", "Range validation", "Nginx configuration", "Scoped firewall rules", "Rollback boundaries", "Automated testing"],
-    gallery: createProjectGallery("Cloudflare Edge Guard", 2),
-    ...sharedProjectMedia,
+    imageSrc: "/media/projects/cloudflare-edge-guard/repository.png",
+    imageAlt: "Cloudflare Edge Guard public GitHub repository overview",
+    mediaLabel: "Public source repository",
+    repositoryUrl: "https://github.com/pipinovi4/cloudflare-edge-guard",
+    repositoryLabel: "View source",
+    gallery: [
+      {
+        src: "/media/projects/cloudflare-edge-guard/repository.png",
+        alt: "Cloudflare Edge Guard public GitHub repository showing shell modules, tests, and configuration",
+        caption: "The public Cloudflare Edge Guard repository, with modular Bash source, tests, templates, and configuration.",
+      },
+    ],
   },
   {
     index: "04",
@@ -136,8 +155,18 @@ export const projects: readonly Project[] = [
       "A Bash toolkit for guarded Ubuntu provisioning and locked, non-root delivery of Docker Compose applications.",
     stack: ["Bash", "Ubuntu", "Docker", "Docker Compose", "systemd", "UFW", "fail2ban", "Git", "Bats", "GitHub Actions"],
     scope: ["Automation architecture", "Server provisioning", "Docker environment", "Access safeguards", "Deployment workflow", "Automated testing"],
-    gallery: createProjectGallery("Ubuntu VPS Bootstrap", 3),
-    ...sharedProjectMedia,
+    imageSrc: "/media/projects/ubuntu-vps-bootstrap/repository.png",
+    imageAlt: "Ubuntu VPS Bootstrap public GitHub repository overview",
+    mediaLabel: "Public source repository",
+    repositoryUrl: "https://github.com/pipinovi4/ubuntu-vps-bootstrap",
+    repositoryLabel: "View source",
+    gallery: [
+      {
+        src: "/media/projects/ubuntu-vps-bootstrap/repository.png",
+        alt: "Ubuntu VPS Bootstrap public GitHub repository showing bootstrap, deploy, uninstall, library, and test files",
+        caption: "The public Ubuntu VPS Bootstrap repository, including guarded provisioning, deployment, and test code.",
+      },
+    ],
   },
 ];
 

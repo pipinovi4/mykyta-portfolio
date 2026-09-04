@@ -31,14 +31,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <div className="project-card__content">
           <h3 id={`project-${project.index}`}>{project.title}</h3>
           <p className="project-card__summary">{project.summary}</p>
-          <ProjectGallery images={project.gallery} projectTitle={project.title} />
+          {project.gallery.length > 1 ? <ProjectGallery images={project.gallery} projectTitle={project.title} /> : null}
         </div>
 
         <div className="project-card__visual-column">
           <ProjectMedia
             imageSrc={project.imageSrc}
+            imageAlt={project.imageAlt}
             projectTitle={project.title}
-            videoId={project.videoId}
+            eyebrow={project.mediaLabel}
+            description={project.repositoryUrl ? "Verified on GitHub" : "Source code is not public"}
           />
 
           {project.scope ? (
@@ -69,9 +71,16 @@ export function ProjectCard({ project }: ProjectCardProps) {
         <ul className="tag-list" aria-label={`${project.title} technology stack`}>
           {project.stack.map((technology) => <li key={technology}>{technology}</li>)}
         </ul>
-        <Link className="project-card__case-link" href={`/work/${project.slug}`}>
-          View case study <span aria-hidden="true">→</span>
-        </Link>
+        <div className="project-card__links">
+          <Link className="project-card__case-link" href={`/work/${project.slug}`}>
+            View case study <span aria-hidden="true">→</span>
+          </Link>
+          {project.repositoryUrl ? (
+            <a className="project-card__case-link" href={project.repositoryUrl} target="_blank" rel="noreferrer">
+              {project.repositoryLabel ?? "View source"} <span aria-hidden="true">↗</span>
+            </a>
+          ) : null}
+        </div>
       </footer>
     </article>
   );

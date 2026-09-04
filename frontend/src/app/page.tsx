@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { CursorGlow } from "@/components/cursor-glow";
 import { ProjectCard } from "@/components/project-card";
-import { ProjectMedia } from "@/components/project-media";
 import { capabilities, infrastructureProjects, profile, projects } from "@/content/portfolio";
 
 const navigation = [
@@ -79,7 +78,7 @@ export default function Home() {
                 <p className="eyebrow">Selected work</p>
                 <h2 id="work-heading">Applications, experiments, and infrastructure tools.</h2>
               </div>
-              <p>Four projects showing production backend work, lower-level systems engineering, and reusable operational automation.</p>
+              <p>Four projects covering private product engineering, public systems work, and reusable operational automation.</p>
             </div>
 
             <div className="project-grid">
@@ -115,7 +114,7 @@ export default function Home() {
               <p className="about-lead">I work backend-first, with enough cross-stack context to own complete delivery paths.</p>
               <p>My work starts with application structure, data relationships, and business rules. I define clear boundaries between APIs, persistence, background processing, and external services. When delivery requires it, I also work with frontend integration, containers, Linux hosts, and deployment workflows—without treating those areas as substitutes for backend depth.</p>
               <div className="about-actions">
-                <a className="text-link" href="#personal-overview">Watch overview <span aria-hidden="true">↓</span></a>
+                <a className="text-link" href={profile.github} target="_blank" rel="noreferrer">View GitHub <span aria-hidden="true">↗</span></a>
                 <a className="button button--secondary" download href={profile.cv} target="_blank" rel="noreferrer">Download CV <span aria-hidden="true">↓</span></a>
               </div>
               <dl className="profile-facts">
@@ -123,17 +122,6 @@ export default function Home() {
                 <div><dt>Working across</dt><dd>Data → integrations → deployment</dd></div>
                 <div><dt>Approach</dt><dd>Explicit and production-oriented</dd></div>
               </dl>
-            </div>
-            <div className="about-overview-video">
-              <ProjectMedia
-                description="Background, engineering approach, and current focus"
-                eyebrow="Personal overview"
-                id="personal-overview"
-                imageSrc="/media/project-visual.jpg"
-                projectTitle="Mykyta Bozhenko personal overview"
-                videoId={profile.overviewVideoId}
-                videoTitle="Personal overview: background, engineering approach, and current focus"
-              />
             </div>
           </div>
         </section>

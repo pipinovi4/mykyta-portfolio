@@ -39,9 +39,12 @@ Engineering credibility takes priority over generic freelance marketing.
 ## 6. Routes
 
 - `/` — homepage
+- `/work` — selected project catalog
 - `/work/fincontrol` — FinControl case study
-- `/work/pipcore` — Pipcore case study
+- `/work/backprop-lab` — BackpropLab case study
+- `/work/pipcore` and `/work/backproplab` — legacy redirects
 - `/work/cloudflare-edge-guard` — Cloudflare Edge Guard case study
+- `/work/ubuntu-vps-bootstrap` — Ubuntu VPS Bootstrap case study
 
 Experience, Education, and Engineering Notes routes are deferred.
 
@@ -61,7 +64,7 @@ Expose role, positioning statement, primary stack, and actions immediately. Prim
 
 ### Selected Work
 
-FinControl, Pipcore, and Cloudflare Edge Guard are primary projects with dedicated routes. Ubuntu VPS Bootstrap is a smaller supporting project. Cards show type, summary, and stack without logo walls.
+FinControl, BackpropLab, Cloudflare Edge Guard, and Ubuntu VPS Bootstrap have dedicated case-study routes. Cards show type, summary, evidence, source availability, and stack without logo walls.
 
 ### Engineering Profile / About
 
@@ -77,7 +80,7 @@ Highlight Cloudflare Edge Guard and Ubuntu VPS Bootstrap.
 
 ### Contact
 
-Provide email, GitHub, and résumé. Hide LinkedIn until a real URL exists. Do not add a backend form in v1.
+Provide email, GitHub, LinkedIn, and résumé. Do not add a backend form in v1.
 
 ### Footer
 
@@ -138,7 +141,7 @@ Omit sections without verified content or assets instead of publishing placehold
 
 ## 14. Definition of done
 
-- Homepage and three case-study routes are implemented.
+- Homepage, project catalog, and four case-study routes are implemented.
 - First viewport communicates identity, specialization, stack, and work.
 - Every claim comes from approved content.
 - Layout works from 360px through large desktops.

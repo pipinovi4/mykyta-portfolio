@@ -20,15 +20,16 @@ export type CaseStudy = {
   stack: readonly string[];
   gallery: readonly ProjectImage[];
   imageSrc: string;
-  videoId: string;
+  imageAlt: string;
+  repositoryUrl?: string;
+  repositoryLabel: string;
+  evidenceNote: string;
   seoTitle?: string;
   metaDescription?: string;
   openGraphDescription?: string;
 };
 
 const projectBySlug = Object.fromEntries(projects.map((project) => [project.slug, project]));
-const sharedVideoId = "xz7RqTj7MbM";
-const sharedImageSrc = "/media/project-visual.jpg";
 
 export const caseStudies: readonly CaseStudy[] = [
   {
@@ -37,7 +38,7 @@ export const caseStudies: readonly CaseStudy[] = [
     kind: "Credit operations and workflow platform",
     summary: "A role-based platform for managing credit applications from guided intake through operational processing, reporting, and follow-up.",
     role: "Backend / Full-stack Engineer",
-    status: "Production",
+    status: "Private product",
     responsibility: "Architecture → Deployment",
     overview: "FinControl centralizes credit applications, processing workflows, payment records, reminders, document handling, and operational reporting. Internal users work through a role-aware Next.js portal, while applicants follow a guided Telegram workflow. The platform coordinates an asynchronous FastAPI backend, PostgreSQL, object storage, RabbitMQ notifications, transactional email, and containerized delivery behind a consistent domain model.",
     problem: "Credit processing is not a single CRUD workflow. The system must preserve incomplete applications, handle sensitive documents, assign work between administrators, workers, brokers, and team leads, track credit status and payments, and notify people when action is required. It also needs to handle session expiry, cross-role authorization, interrupted Telegram conversations, concurrent background jobs, schema migrations, and failed deployments.",
@@ -76,14 +77,10 @@ export const caseStudies: readonly CaseStudy[] = [
       { title: "Deployment and operations", description: "Docker environments, component-aware image builds, registry publishing, remote rollout, Alembic migrations, health polling, container status, and failure logs form the delivery workflow." },
     ],
     metrics: [
-      { value: "193", label: "Static FastAPI routes" },
-      { value: "18", label: "SQLAlchemy tables" },
-      { value: "42", label: "Alembic migrations" },
-      { value: "33", label: "Backend test definitions" },
-      { value: "10", label: "Frontend page routes" },
+      { value: "3", label: "Deployable application services" },
       { value: "4", label: "Operational roles" },
-      { value: "8", label: "Development services" },
-      { value: "3", label: "Application images" },
+      { value: "8", label: "Supported bot locales" },
+      { value: "42", label: "Alembic migration files reviewed" },
     ],
     challenges: [
       { challenge: "Maintaining authorization across operational roles", solution: "Combine role enums, authenticated-user dependencies, scoped services, role-specific endpoints, and corresponding frontend views instead of relying on UI visibility alone." },
@@ -95,14 +92,16 @@ export const caseStudies: readonly CaseStudy[] = [
     result: "FinControl implements a broad credit-operations workflow spanning application intake, document storage, credit processing, payment tracking, reminders, analytics, role-specific dashboards, and administration. Browser-based internal operations and a Telegram applicant flow share PostgreSQL state, object storage, asynchronous notifications, and transactional email. The project demonstrates backend domain modeling, async Python development, access control, workflow state management, integration work, operational frontend delivery, and deployment automation without relying on unverified claims about traffic or business scale.",
     stack: projectBySlug.fincontrol.stack,
     gallery: projectBySlug.fincontrol.gallery,
-    imageSrc: sharedImageSrc,
-    videoId: sharedVideoId,
+    imageSrc: projectBySlug.fincontrol.imageSrc,
+    imageAlt: projectBySlug.fincontrol.imageAlt,
+    repositoryLabel: "Private source",
+    evidenceNote: "The product source is private. This case study is based on a reviewed, sanitized local codebase; the screenshot contains no customer or production data.",
     seoTitle: "FinControl — Credit Operations Platform",
     metaDescription: "A role-based credit operations platform with FastAPI, Next.js, PostgreSQL, Telegram workflows, object storage, RabbitMQ, and automated deployment.",
     openGraphDescription: "FinControl connects guided credit intake, role-aware operations, document storage, asynchronous notifications, and deployment automation in one platform.",
   },
   {
-    slug: "pipcore",
+    slug: "backprop-lab",
     title: "BackpropLab",
     kind: "Neural network systems engineering lab",
     summary: "Building neural-network mechanics from tensors to experimental Transformer-style execution in C++17.",
@@ -145,27 +144,28 @@ export const caseStudies: readonly CaseStudy[] = [
       { title: "Experimental model execution", description: "Examples include MNIST, embeddings, attention, Transformer-style training, greedy token generation, and an interactive CLI; attention backward propagation and end-to-end correctness remain experimental." },
     ],
     metrics: [
-      { value: "124", label: "Active GoogleTest cases" },
-      { value: "123/124", label: "Current local CTest result" },
-      { value: "12", label: "Test source files" },
-      { value: "~10.2k", label: "C++ and test lines" },
+      { value: "C++17", label: "Core implementation language" },
+      { value: "12", label: "GoogleTest source files" },
       { value: "7", label: "Activation types" },
       { value: "4", label: "Loss types" },
       { value: "3", label: "Optimizers" },
-      { value: "CPU", label: "Execution backend" },
+      { value: "CPU", label: "Current execution backend" },
     ],
     challenges: [
       { challenge: "Representing multidimensional data without an ML tensor library", solution: "Implement contiguous storage, dimensions, strides, indexing, transformations, reductions, broadcasting rules, and Eigen-backed dot products inside Tensor<T>." },
       { challenge: "Training without automatic differentiation", solution: "Each layer caches forward state, computes its own gradients, and exposes parameter and gradient references while models sequence backward execution explicitly." },
       { challenge: "Integrating trainable components with common optimizers", solution: "A shared parameter/gradient contract lets SGD, Adam, and RMSprop apply schedules, weight decay, clipping, and persisted state independently of gradient production." },
-      { challenge: "Handling attention shapes, masks, and parallel state", solution: "Query, key, and value projections, head splitting, masking, concatenation, and backward logic are implemented but remain experimental because a masked-attention test currently fails." },
+      { challenge: "Handling attention shapes, masks, and cached state", solution: "Query, key, and value projections, head splitting, masking, concatenation, and backward logic are implemented, but attention and Transformer correctness remain explicitly experimental." },
       { challenge: "Connecting model code to reproducible datasets", solution: "Python preparation utilities produce local artifacts consumed by C++ loaders, with tokenization, vocabulary persistence, and weight files completing the experimental workflow." },
     ],
-    result: "BackpropLab provides a working C++ foundation for custom tensor operations, explicit neural-network gradients, optimizers, tokenization, dataset loading, and several model compositions. The current local CTest baseline passes 123 of 124 active cases; a masked multi-head-attention case still fails, so attention backward propagation and the end-to-end Transformer path remain experimental. The project demonstrates low-level C++ implementation, numerical API design, manual gradient reasoning, build integration, testing, and transparent documentation of engineering limitations.",
-    stack: projectBySlug.pipcore.stack,
-    gallery: projectBySlug.pipcore.gallery,
-    imageSrc: sharedImageSrc,
-    videoId: sharedVideoId,
+    result: "BackpropLab provides a C++ foundation for custom tensor operations, explicit neural-network gradients, optimizers, tokenization, dataset loading, and several experimental model compositions. Attention backward propagation and the end-to-end Transformer path remain under correctness work. The public repository demonstrates low-level C++ implementation, numerical API design, manual gradient reasoning, build integration, tests, and transparent documentation of engineering limitations.",
+    stack: projectBySlug["backprop-lab"].stack,
+    gallery: projectBySlug["backprop-lab"].gallery,
+    imageSrc: projectBySlug["backprop-lab"].imageSrc,
+    imageAlt: projectBySlug["backprop-lab"].imageAlt,
+    repositoryUrl: projectBySlug["backprop-lab"].repositoryUrl,
+    repositoryLabel: "View BackpropLab on GitHub",
+    evidenceNote: "Public source, build configuration, examples, tests, and documented limitations are available in the linked repository.",
     seoTitle: "BackpropLab — C++ Neural Network Engineering",
     metaDescription: "A C++17 neural-network lab with custom tensors, manual backpropagation, optimizers, attention components, tests, and model experiments.",
     openGraphDescription: "BackpropLab explores neural-network internals through custom C++ tensors, explicit gradients, optimizers, and experimental Transformer components.",
@@ -233,8 +233,11 @@ export const caseStudies: readonly CaseStudy[] = [
     result: "Version 2.0.0 provides a coherent workflow for preparing, enforcing, updating, verifying, inspecting, and removing host-side Cloudflare origin controls. The repository combines validated external input, generated Nginx configuration, scoped firewall ownership, rollback-aware ordering, filesystem state, locking, backups, scheduled execution, and 19 isolated tests. It demonstrates defensive Linux automation and failure-aware system design without claiming undocumented production adoption or business results.",
     stack: projectBySlug["cloudflare-edge-guard"].stack,
     gallery: projectBySlug["cloudflare-edge-guard"].gallery,
-    imageSrc: sharedImageSrc,
-    videoId: sharedVideoId,
+    imageSrc: projectBySlug["cloudflare-edge-guard"].imageSrc,
+    imageAlt: projectBySlug["cloudflare-edge-guard"].imageAlt,
+    repositoryUrl: projectBySlug["cloudflare-edge-guard"].repositoryUrl,
+    repositoryLabel: "View Cloudflare Edge Guard on GitHub",
+    evidenceNote: "The public version 2.0.0 source and all 19 Bats tests were reviewed and run successfully for this portfolio update.",
     seoTitle: "Cloudflare Edge Guard | Infrastructure Automation",
     metaDescription: "A Bash toolkit for staged Cloudflare origin hardening with validated Nginx configuration, scoped UFW rules, rollback handling, and tests.",
     openGraphDescription: "Cloudflare Edge Guard coordinates Nginx, UFW, and validated Cloudflare network ranges through a staged, failure-aware Linux automation workflow.",
@@ -287,7 +290,7 @@ export const caseStudies: readonly CaseStudy[] = [
       { value: "7", label: "Focused shell modules" },
       { value: "17", label: "Configuration keys" },
       { value: "16", label: "Bats unit tests" },
-      { value: "2", label: "Tested Ubuntu releases" },
+      { value: "2", label: "Supported Ubuntu LTS releases" },
       { value: "2", label: "CPU architectures" },
       { value: "4", label: "Quality categories" },
       { value: "0.1.0", label: "Documented release" },
@@ -302,8 +305,11 @@ export const caseStudies: readonly CaseStudy[] = [
     result: "Ubuntu VPS Bootstrap delivers a documented workflow for provisioning an Ubuntu VPS and deploying a single-host Docker Compose application. It supports guarded configuration, repeatable server setup, privilege separation, Git-based updates, health checks, metadata, automated unit and smoke tests, and limited removal of managed host files. Automated rollback, application backups, monitoring integration, multi-host orchestration, high availability, and verified real-VPS acceptance results are intentionally not claimed.",
     stack: projectBySlug["ubuntu-vps-bootstrap"].stack,
     gallery: projectBySlug["ubuntu-vps-bootstrap"].gallery,
-    imageSrc: sharedImageSrc,
-    videoId: sharedVideoId,
+    imageSrc: projectBySlug["ubuntu-vps-bootstrap"].imageSrc,
+    imageAlt: projectBySlug["ubuntu-vps-bootstrap"].imageAlt,
+    repositoryUrl: projectBySlug["ubuntu-vps-bootstrap"].repositoryUrl,
+    repositoryLabel: "View Ubuntu VPS Bootstrap on GitHub",
+    evidenceNote: "The public version 0.1.0 source and all 16 Bats tests were reviewed and run successfully for this portfolio update.",
     seoTitle: "Ubuntu VPS Bootstrap | Infrastructure Automation",
     metaDescription: "A Bash toolkit by Mykyta Bozhenko for repeatable Ubuntu provisioning, Docker Compose deployment, validation, and guarded server configuration.",
     openGraphDescription: "A modular Ubuntu provisioning and Docker Compose deployment toolkit built around explicit configuration, operational safeguards, and automated checks.",

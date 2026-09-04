@@ -1,115 +1,71 @@
-# Content Specification
+# Content and evidence guide
 
-## Content principles
+This document defines the public claims used by the portfolio. Prefer clear engineering language and evidence that a reviewer can inspect.
 
-- The site language is English.
-- The name is always written as `Mykyta Bozhenko`.
-- Position Mykyta primarily as a backend/software engineer working with production systems and infrastructure.
-- Address engineering leaders, employers, and freelance clients without becoming a generic freelance landing page.
-- Keep claims concise and factual.
-- Never invent employers, clients, metrics, testimonials, outcomes, dates, LinkedIn URLs, or project details.
-
-## Identity
+## Identity and positioning
 
 - **Name:** Mykyta Bozhenko
 - **Role:** Python Backend Engineer / Software Engineer
-- **Website:** https://mykytabozhenko.site
-- **GitHub:** https://github.com/pipinovi4
-- **Email:** mykyta.bozhenko.dev@gmail.com
-- **LinkedIn:** Pending verified URL — do not render until provided
+- **Website:** <https://mykytabozhenko.site>
+- **GitHub:** <https://github.com/pipinovi4>
+- **Email:** <mykyta.bozhenko.dev@gmail.com>
 - **Résumé:** `/Mykyta_Bozhenko_CV.pdf`
 
-## Hero
+The primary positioning is backend engineering: API design, relational data, business workflows, integrations, and delivery. C++, machine learning, frontend work, and infrastructure support that direction without replacing it.
 
-- **Eyebrow:** Python Backend Engineer / Software Engineer
-- **Headline:** Building production systems, AI integrations, and reliable infrastructure.
-- **Supporting copy:** I design and build backend systems, REST APIs, internal platforms, AI integrations, and the infrastructure required to deploy and operate them.
-- **Primary stack:** Python · FastAPI · PostgreSQL · SQLAlchemy · Docker · Linux · Nginx
-- **Primary action:** `View selected work` → `#work`
-- **Secondary action:** `Contact me` → `#contact`
-- **Utility action:** `Download résumé` → TBD résumé asset
+## Evidence rules
 
-## Selected Work
+- Use only project details confirmed in source code, documentation, or reproducible checks.
+- Link public source directly from the project card and case study.
+- Mark private code as private. Never imply that a public repository or demo exists when it does not.
+- Use screenshots captured from the real application or repository. Do not substitute generic artwork, mock dashboards, or duplicated images.
+- Do not publish customer records, credentials, private URLs, employer or client names, revenue, traffic, uptime, performance, or business outcomes without explicit approval and evidence.
+- Date or remove numerical facts that can drift as a repository changes.
+- Describe experimental work and unverified environments explicitly.
 
-- **Heading:** Selected work
-- **Introduction:** A selection of backend systems, engineering tools, and infrastructure projects.
+## Selected projects
 
 ### FinControl
 
 - **Route:** `/work/fincontrol`
-- **Label:** Production financial operations platform
-- **Summary:** A production platform for financial operations, covering backend architecture, REST APIs, database design, business logic, frontend integration, deployment, and maintenance.
-- **Stack:** FastAPI, PostgreSQL, SQLAlchemy 2.0, Alembic, Pydantic v2, Next.js, React, Docker
-- **Missing:** screenshots, architecture diagram, constraints, implementation narrative, and publishable repository/demo links
+- **Status:** Private product
+- **Evidence:** Sanitized local code review and a real sign-in interface capture
+- **Public source:** None
+- **Verified scope:** FastAPI API, PostgreSQL, SQLAlchemy, Alembic, role-based access, Next.js dashboard, Telegram workflow, RabbitMQ notifications, S3-compatible storage, Docker delivery
 
-### Pipcore
+The case study may describe architecture and responsibilities, but it must not expose customer data, production credentials, private source URLs, or unsupported business results.
 
-- **Route:** `/work/pipcore`
-- **Label:** Neural network engine and educational machine-learning project
-- **Summary:** A modular neural-network engine implemented in C++ with manual forward and backward propagation, CPU computation, and automated tests.
-- **Stack:** C++17, Eigen
-- **Technical details:** manual forward propagation, manual backward propagation, CPU computations, modular architecture, automated tests
-- **Missing:** repository URL, diagrams, screenshots/code excerpts, supported layers, and test details
+### BackpropLab
+
+- **Route:** `/work/backprop-lab`
+- **Status:** Experimental
+- **Source:** <https://github.com/pipinovi4/backprop-lab-cpp>
+- **Verified scope:** C++17 custom tensors, manual forward and backward passes, Eigen-backed operations, optimizers, tests, and experimental attention and Transformer-style components
+
+Do not describe BackpropLab as a production framework. CUDA, Python bindings, general autograd, stable checkpoints, benchmarks, and validated large-scale training are not implemented.
 
 ### Cloudflare Edge Guard
 
 - **Route:** `/work/cloudflare-edge-guard`
-- **Label:** Open-source origin protection toolkit
-- **Summary:** An open-source toolkit for protecting an origin server behind Cloudflare through IP synchronization, firewall and Nginx configuration, validation, rollback, and health checks.
-- **Stack:** Bash, Linux, UFW, Nginx, Cloudflare, Docker-related deployment tooling
-- **Technical details:** Cloudflare IP synchronization, UFW firewall rules, Nginx configuration, dry-run mode, validation, rollback, health checks
-- **Missing:** repository URL, usage examples, supported environments, and architecture/flow diagram
+- **Status:** Version 2.0.0
+- **Source:** <https://github.com/pipinovi4/cloudflare-edge-guard>
+- **Verified checks:** syntax, ShellCheck, shfmt, and all 19 Bats tests pass
+
+The toolkit coordinates staged Nginx and UFW changes around validated Cloudflare network ranges. Tests use fixtures and mocks; they do not prove behavior on every production host.
 
 ### Ubuntu VPS Bootstrap
 
-- **Presentation:** Smaller supporting project; no dedicated case-study route in v1
-- **Label:** Ubuntu VPS deployment automation
-- **Summary:** Automation for preparing a clean Ubuntu VPS and deploying applications.
-- **Missing:** repository URL, exact scope, supported tools, and publishable setup flow
+- **Route:** `/work/ubuntu-vps-bootstrap`
+- **Status:** Version 0.1.0
+- **Source:** <https://github.com/pipinovi4/ubuntu-vps-bootstrap>
+- **Verified checks:** ShellCheck, shfmt, and all 16 Bats tests pass
 
-## Engineering Profile / About
+The toolkit supports guarded Ubuntu provisioning and locked Docker Compose delivery. It does not claim automated rollback, monitoring, backups, multi-host orchestration, high availability, or verified acceptance on every VPS provider.
 
-- **Heading:** Engineering profile
-- **Copy:** I am a Python Backend Engineer and Software Engineer focused on production-ready backend systems, REST APIs, internal platforms, AI integrations, and deployment infrastructure.
-- **Supporting copy:** My core work spans application architecture, data modeling, business logic, service integration, containerized deployment, and Linux-based operations. I also work across frontend and systems tooling when a project requires an end-to-end engineering approach.
+## Writing style
 
-## Capabilities / Technology Stack
-
-### Backend systems
-
-Python, FastAPI, REST API design, PostgreSQL, SQLAlchemy, Alembic, Pydantic.
-
-### Production and infrastructure
-
-Docker, Linux, Nginx, VPS deployment automation, Cloudflare-related infrastructure.
-
-### AI and numerical software
-
-AI integrations, PyTorch, C++, Eigen.
-
-### Product integration
-
-TypeScript, React, Next.js, frontend integration, automation tooling.
-
-## Open Source and Infrastructure
-
-- **Heading:** Open source and infrastructure
-- **Copy:** Engineering work beyond application code: deployment automation, origin-server protection, Linux tooling, validation workflows, rollback mechanisms, and operational health checks.
-- **Featured:** Cloudflare Edge Guard and Ubuntu VPS Bootstrap
-
-## Contact
-
-- **Heading:** Let’s build something reliable.
-- **Copy:** Available for backend engineering, AI integration, infrastructure, and production-ready web application work.
-- **Email:** `mailto:mykyta.bozhenko.dev@gmail.com`
-- **GitHub:** `https://github.com/pipinovi4`
-- **Résumé:** `/Mykyta_Bozhenko_CV.pdf`
-- LinkedIn remains hidden until a valid URL is provided.
-
-## Footer
-
-Mykyta Bozhenko · Python Backend Engineer / Software Engineer · GitHub · Email · current year.
-
-## Future content
-
-Experience, Education, Blog / Engineering Notes, and multilingual content are outside v1.
+- Use direct, natural English.
+- Prefer responsibilities and trade-offs over tool lists.
+- Keep paragraphs short enough to scan during a technical review.
+- Avoid inflated language unless a specific fact supports it.
+- State limitations in the same case study as the capability they qualify.

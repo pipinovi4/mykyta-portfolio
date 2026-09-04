@@ -64,8 +64,25 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
                 <div><dt>Status</dt><dd>{study.status}</dd></div>
                 <div><dt>Responsibility</dt><dd>{study.responsibility}</dd></div>
               </dl>
+              <div className="case-evidence">
+                <span className="mono-label">Evidence</span>
+                <p>{study.evidenceNote}</p>
+                {study.repositoryUrl ? (
+                  <a href={study.repositoryUrl} target="_blank" rel="noreferrer">
+                    {study.repositoryLabel} <span aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  <span className="case-evidence__private">{study.repositoryLabel}</span>
+                )}
+              </div>
             </div>
-            <ProjectMedia imageSrc={study.imageSrc} projectTitle={study.title} videoId={study.videoId} />
+            <ProjectMedia
+              description={study.repositoryUrl ? "Verified on GitHub" : "Captured from the application"}
+              eyebrow={study.repositoryUrl ? "Public source repository" : "Real product interface"}
+              imageAlt={study.imageAlt}
+              imageSrc={study.imageSrc}
+              projectTitle={study.title}
+            />
           </div>
         </section>
 
@@ -118,22 +135,24 @@ export default async function CaseStudyPage({ params }: CaseStudyPageProps) {
           </div>
         </section>
 
-        <section className="case-section">
-          <div className="site-shell">
-            <div className="case-section__heading"><div><p className="eyebrow">07 / Walkthrough</p><h2>Project gallery</h2></div><p>Open any frame to inspect the project presentation in the full-screen viewer.</p></div>
-            <ProjectGallery images={study.gallery} projectTitle={study.title} />
-          </div>
-        </section>
+        {study.gallery.length > 1 ? (
+          <section className="case-section">
+            <div className="site-shell">
+              <div className="case-section__heading"><div><p className="eyebrow">07 / Evidence</p><h2>Project gallery</h2></div><p>Real interfaces and repository evidence from the project.</p></div>
+              <ProjectGallery images={study.gallery} projectTitle={study.title} />
+            </div>
+          </section>
+        ) : null}
 
         <section className="case-section case-section--surface">
           <div className="site-shell case-two-column">
-            <div><p className="eyebrow">08 / Challenges</p><h2>Challenges and solutions</h2></div>
+            <div><p className="eyebrow">{study.gallery.length > 1 ? "08" : "07"} / Challenges</p><h2>Challenges and solutions</h2></div>
             <div className="challenge-list">{study.challenges.map(({ challenge, solution }, index) => <article key={challenge}><span className="mono-label">0{index + 1}</span><div><h3>{challenge}</h3><p>→ {solution}</p></div></article>)}</div>
           </div>
         </section>
 
         <section className="case-result">
-          <div className="site-shell case-result__grid"><div><p className="eyebrow">09 / Result</p><h2>Result</h2></div><div><p>{study.result}</p><ul className="tag-list">{study.stack.map((item) => <li key={item}>{item}</li>)}</ul></div></div>
+          <div className="site-shell case-result__grid"><div><p className="eyebrow">{study.gallery.length > 1 ? "09" : "08"} / Result</p><h2>Result</h2></div><div><p>{study.result}</p><ul className="tag-list">{study.stack.map((item) => <li key={item}>{item}</li>)}</ul></div></div>
         </section>
 
         <nav className="next-project" aria-label="Project navigation">
