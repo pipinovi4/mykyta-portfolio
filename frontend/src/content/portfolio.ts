@@ -20,6 +20,7 @@ export type Project = {
   imageAlt: string;
   mediaLabel: string;
   repositoryUrl?: string;
+  walkthroughUrl?: string;
   repositoryLabel?: string;
   gallery: readonly ProjectImage[];
 };
